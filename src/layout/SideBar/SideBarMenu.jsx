@@ -49,7 +49,7 @@ export default function SideBarMenu({setMobileNavOpen, collapsed}) {
             title: "APP & PAGES", dataLinks: [
                 {text: "Email", url: "/email", icon: "email"},
                 {text: "User", url: "/user", icon: "user"},
-                {text: "Roles & Permissions", url: "/roles", icon: "lock"},
+                {text: "Rules & Permissions", url: "/rules", icon: "lock"},
             ]
         }
     ];

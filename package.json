@@ -1,9 +1,9 @@
 {
-  "name": "dashboard-panel",
+  "name": "dashboard-skeleton",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://homow.github.io/dashboard-panel/",
+  "homepage": "https://homow.github.io/dashboard-skeleton/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
