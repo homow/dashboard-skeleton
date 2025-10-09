@@ -10,15 +10,23 @@ export default function App() {
 
     return (
         <div id="app-container" className="flex flex-row min-h-screen">
+
+            {/* svg icons */}
             <SvgDefs/>
 
+            {/* overlay */}
             <Overlay flag={mobileNavOpen} setFlag={setMobileNavOpen}/>
 
+            {/* side bar menu and links */}
             <SideBar mobileNavOpen={mobileNavOpen} setMobileNavOpen={setMobileNavOpen}/>
 
             <div className={"transition-all ml-custom flex-1 px-6 flex flex-col"}>
+
+                {/* top bar | header */}
                 <TopBar mobileNavOpen={mobileNavOpen} setMobileNavOpen={setMobileNavOpen}/>
-                <MainLayout className={"flex-1 h-full"}/>
+
+                {/* main content */}
+                <MainLayout className={""}/>
             </div>
         </div>
     )

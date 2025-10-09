@@ -1,13 +1,16 @@
-import Footer from "./Footer";
+import AppRoutes from "@/routes/AppRoutes.jsx";
+import Footer from "./Footer/Footer.jsx";
 
 export default function MainLayout({className}) {
     return (
-        <div className={`relative ${className}`}>
-            <div id="main-content" className={"bg-main-bg py-3 h-full"}>
+        <div className={`relative h-full ${className}`}>
+            <div id="main-content" className={"h-full bg-main-bg py-3"}>
 
-                {/* <=== build your app here ===> */}
-
+                {/* Routes */}
+                <AppRoutes/>
             </div>
+
+            {/* footer */}
             <Footer/>
         </div>
     )
