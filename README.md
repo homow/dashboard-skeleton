@@ -1,3 +1,7 @@
+### 🌐 زبان‌ها / Languages
+- 🇺🇸 [English Version](./README.md)
+- 🇮🇷 [نسخه فارسی](./README.FA.md)
+
 # 🧩 Dashboard Template
 
 A clean, minimal, and fast **React Dashboard Template** built with the latest modern stack.  
@@ -48,9 +52,66 @@ npm install
 # Run development server
 npm run dev
 ```
+
+📁 Project Structure & Usage
+
+```markdown
+dashboard-skeleton/
+├── src/                    # Main source folder (React + Vite)
+│   ├── assets/             # Images and static assets
+│   ├── components/         # Reusable UI components
+│   ├── layout/             # Page layouts and structure (MainLayout, TopBar, SideBar)
+│   ├── pages/              # Main application pages
+│   ├── routes/             # App routing and navigation
+│   ├── styles/             # CSS files or Tailwind configuration
+│   ├── App.jsx             # Root React component
+│   └── main.jsx            # Entry point (React + Vite)
+├── eslint.config.js        # ESLint configuration for code linting
+├── jsconfig.json           # Path aliases configuration for IDE support
+└── vite.config.js          # Vite configuration (base path, plugins, etc.)
+```
+
+Everything is already set up — you just need to add your pages and configure the routes.
+Here’s how you can get started:
+
+⚙️ Steps
+
+Create your pages:
+Add your new pages inside:
+src/pages/
+
+Define your routes:
+Manage all routes in:
+src/routes/AppRoutes.jsx
+
+Customize the sidebar:
+Edit links and menu items in:
+src/layout/SideBar/SideBarMenu.jsx
+
+Reusable components:
+All shared components live in:
+src/components/
+
+Built-in features:
+
+Dark / Light mode 🌗
+
+Responsive sidebar 📱
+
+Ready-to-go layout for fast development ⚡
+
+🧭 Summary
+
+The layout, navigation, and design are ready —
+just add your own pages and start building 🚀
+
 ---
 
 ### 💡 Author
 
 > 👨‍💻 Made by [**homow**](https://github.com/homow)  
 > Crafted with ❤️ for developers who love clean & minimal UI.
+
+### 🌐 زبان‌ها / Languages
+- 🇺🇸 [English Version](./README.md)
+- 🇮🇷 [نسخه فارسی](./README.FA.md)
