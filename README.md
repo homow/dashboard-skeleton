@@ -1,6 +1,7 @@
-### 🌐 زبان‌ها / Languages
+### 🌐 README Versions
 - 🇺🇸 [English Version](./README.md)
 - 🇮🇷 [نسخه فارسی](./README.FA.md)
+
 
 # 🧩 Dashboard Template
 
@@ -112,6 +113,6 @@ just add your own pages and start building 🚀
 > 👨‍💻 Made by [**homow**](https://github.com/homow)  
 > Crafted with ❤️ for developers who love clean & minimal UI.
 
-### 🌐 زبان‌ها / Languages
+### 🌐 README Versions
 - 🇺🇸 [English Version](./README.md)
 - 🇮🇷 [نسخه فارسی](./README.FA.md)
