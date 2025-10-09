@@ -15,6 +15,7 @@
     "publish-all": "npm run update-main && npm run build-deploy"
   },
   "dependencies": {
+    "gh-pages": "^6.3.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router-dom": "^7.9.3"
