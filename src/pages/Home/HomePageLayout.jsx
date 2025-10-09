@@ -9,18 +9,18 @@ export default function HomePageLayout() {
                 </p>
             </div>
 
-            <div className="flex flex-col">
+            <div className="flex flex-col gap-2">
                 <p className="mb-8">A fast, clean dashboard template built with React and Tailwind CSS 4.</p>
 
                 <a
-                    className="text-sky-500 hover:underline active:underline"
+                    className="inline-block max-w-max text-sky-500 hover:underline active:underline"
                     target="_blank"
                     href="https://yourwebsite.com"
                 >
                     my github
                 </a>
                 <a
-                    className="text-sky-500 hover:underline active:underline"
+                    className="inline-block max-w-max text-sky-500 hover:underline active:underline"
                     target="_blank"
                     href="https://github.com/homow/dashboard-template"
                 >
