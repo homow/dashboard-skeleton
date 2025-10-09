@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+    <!-- meta -->
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+
+    <!-- title -->
+    <title>Dashboard | Home</title>
+
+    <!-- script -->
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+        document.documentElement.classList.toggle("dark",
+            localStorage.theme === "dark" || (!localStorage.theme && window.matchMedia("(prefers-color-scheme: dark)").matches)
+        )
+    </script>
+</head>
+<body>
+<div id="root"></div>
+</body>
+</html>
