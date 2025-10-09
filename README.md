@@ -25,9 +25,11 @@ Responsive sidebar for both mobile and desktop, plus built-in **Dark/Light mode*
 
 ---
 
-## 📸 Preview
+### 🔗 Preview
 
-> The project provides a ready-to-use base layout for any admin or dashboard interface.
+> 🚀 **Live Demo:** [**Dashboard Skeleton (GitHub Pages)**](https://homow.github.io/dashboard-skeleton)  
+> Explore the live preview of the dashboard structure, including responsive menu and dark/light themes.
+
 
 ---
 
