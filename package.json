@@ -14,12 +14,12 @@
     "publish-all": "npm run update-main && npm run build-deploy"
   },
   "dependencies": {
-    "gh-pages": "^6.3.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router-dom": "^7.9.3"
   },
   "devDependencies": {
+    "gh-pages": "^6.3.0",
     "@eslint/js": "^9.36.0",
     "@tailwindcss/vite": "^4.1.14",
     "@types/react": "^19.1.16",
