@@ -38,6 +38,16 @@ function SideBarLinks({setMobileNavOpen, collapsed, ...props}) {
 }
 
 export default function SideBarMenu({setMobileNavOpen, collapsed}) {
+
+    {/* آیکن‌ها از فایل src/components/ui/SvgDefs.jsx می‌آیند و به‌صورت <symbol> تعریف شده‌اند.
+    استفاده از <use href="#id"> باعث می‌شود آیکن‌ها به‌صورت ریفرنس از آن فایل بارگذاری شوند. */}
+
+    // ----------------------------------------------------------
+
+    {/* Icons are imported from src/components/ui/SvgDefs.jsx,
+    where each icon is defined as an SVG <symbol>.
+    We use <use href="#id"> to reference and render them here. */}
+
     const dataLinks = [
         {
             title: "Dashboard", dataLinks: [
@@ -53,6 +63,7 @@ export default function SideBarMenu({setMobileNavOpen, collapsed}) {
             ]
         }
     ];
+
 
     return (
         <div className={"space-y-5 pb-2"}>
