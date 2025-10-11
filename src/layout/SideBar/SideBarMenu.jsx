@@ -16,7 +16,7 @@ function SideBarLinks({setMobileNavOpen, collapsed, ...props}) {
             <ul className={"mt-3 space-y-1.5"}>
                 {dataLinks && dataLinks.map(link => (
                     <li key={link.text}>
-                        <NavLink onClick={() => setMobileNavOpen && setMobileNavOpen(false)} to={link.url} className={({isActive}) => `h-10.5 flex items-center pl-5.5 py-2 flex-row gap-3 w-full font-light rounded-r-full ${isActive && "grad-links"}`}>
+                        <NavLink onClick={() => setMobileNavOpen && setMobileNavOpen(false)} to={link.url} className={({isActive}) => `h-10.5 flex items-center pl-5.5 py-2 flex-row gap-3 w-full rounded-r-full ${isActive && "grad-links"}`}>
 
                             {/* icon */}
                             <span>
@@ -38,16 +38,6 @@ function SideBarLinks({setMobileNavOpen, collapsed, ...props}) {
 }
 
 export default function SideBarMenu({setMobileNavOpen, collapsed}) {
-
-    {/* آیکن‌ها از فایل src/components/ui/SvgDefs.jsx می‌آیند و به‌صورت <symbol> تعریف شده‌اند.
-    استفاده از <use href="#id"> باعث می‌شود آیکن‌ها به‌صورت ریفرنس از آن فایل بارگذاری شوند. */}
-
-    // ----------------------------------------------------------
-
-    {/* Icons are imported from src/components/ui/SvgDefs.jsx,
-    where each icon is defined as an SVG <symbol>.
-    We use <use href="#id"> to reference and render them here. */}
-
     const dataLinks = [
         {
             title: "Dashboard", dataLinks: [
@@ -63,7 +53,6 @@ export default function SideBarMenu({setMobileNavOpen, collapsed}) {
             ]
         }
     ];
-
 
     return (
         <div className={"space-y-5 pb-2"}>

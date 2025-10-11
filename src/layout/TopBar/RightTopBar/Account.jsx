@@ -1,4 +1,4 @@
-import avatar from "@/assets/top-bar/Avatar.webp"
+import avatar from "@img/top-bar/Avatar.webp"
 import {useEffect, useState} from "react";
 
 export default function Account() {

@@ -66,8 +66,25 @@ export default function SvgDefs() {
             <symbol id="lock-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
             </symbol>
-            {/* email */}
-            {/* email */}
+
+            {/* <=== Home Page ===> */}
+
+            {/* more */}
+            <symbol id="more-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 16" fill="none">
+                <path d="M2 4C3.1 4 4 3.1 4 2C4 0.9 3.1 0 2 0C0.9 0 0 0.9 0 2C0 3.1 0.9 4 2 4ZM2 6C0.9 6 0 6.9 0 8C0 9.1 0.9 10 2 10C3.1 10 4 9.1 4 8C4 6.9 3.1 6 2 6ZM2 12C0.9 12 0 12.9 0 14C0 15.1 0.9 16 2 16C3.1 16 4 15.1 4 14C4 12.9 3.1 12 2 12Z" fill="var(--color-secondary-txt)" fillOpacity="0.54"/>
+            </symbol>
+            {/* userOutline */}
+            <symbol id="userOutline-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path> <path d="M12 14C8.13401 14 5 17.134 5 21H19C19 17.134 15.866 14 12 14Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path></g>
+            </symbol>
+            {/* profitSale */}
+            <symbol id="profitSale-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 12" fill="none">
+                <path d="M14.5 0L16.79 2.29L11.91 7.17L7.91 3.17L0.5 10.59L1.91 12L7.91 6L11.91 10L18.21 3.71L20.5 6V0H14.5Z" fill="white"/>
+            </symbol>
+            {/* pcAndPhone */}
+            <symbol id="pcAndPhone-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 16" fill="none">
+                <path d="M4.5 2H22.5V0H4.5C3.4 0 2.5 0.9 2.5 2V13H0.5V16H14.5V13H4.5V2ZM23.5 4H17.5C16.95 4 16.5 4.45 16.5 5V15C16.5 15.55 16.95 16 17.5 16H23.5C24.05 16 24.5 15.55 24.5 15V5C24.5 4.45 24.05 4 23.5 4ZM22.5 13H18.5V6H22.5V13Z" fill="white"/>
+            </symbol>
             {/* email */}
             {/* email */}
             {/* email */}
