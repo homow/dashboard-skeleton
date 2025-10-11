@@ -7,11 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "deploy": "gh-pages -d dist",
-    "update-main": "git checkout main && git fetch --all --prune && git pull origin main",
-    "build-deploy": "vite build && npm run deploy",
-    "publish-all": "npm run update-main && npm run build-deploy"
+    "preview": "vite preview"
   },
   "dependencies": {
     "react": "^19.1.1",
@@ -19,7 +15,6 @@
     "react-router-dom": "^7.9.3"
   },
   "devDependencies": {
-    "gh-pages": "^6.3.0",
     "@eslint/js": "^9.36.0",
     "@tailwindcss/vite": "^4.1.14",
     "@types/react": "^19.1.16",

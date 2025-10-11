@@ -35,7 +35,6 @@ Responsive sidebar for both mobile and desktop, plus built-in **Dark/Light mode*
 > 🚀 **Live Demo:** [**Dashboard Skeleton (GitHub Pages)**](https://homow.github.io/dashboard-skeleton)  
 > Explore the live preview of the dashboard structure, including responsive menu and dark/light themes.
 
-
 ---
 
 ## 🧭 Get Started
@@ -105,6 +104,19 @@ Ready-to-go layout for fast development ⚡
 
 The layout, navigation, and design are ready —
 just add your own pages and start building 🚀
+
+---
+
+### 🔗 Icon System
+
+Icons are rendered using SVG `<use>` referencing `<symbol>` definitions.  
+All icons are defined in `/src/components/ui/SvgDefs.jsx`.
+
+```jsx
+<svg className="size-5">
+  <use href={`#id-icon`}></use>
+</svg>
+```
 
 ---
 
