@@ -75,16 +75,16 @@ export default function TopSection() {
     return (
         <section
             id="top-section"
-            className={"grid grid-cols-1 gap-2 @lg/main:grid-cols-2 @4xl/main:grid-cols-11"}>
+            className={"grid grid-cols-1 gap-2 @lg/main:grid-cols-2 @3xl/main:grid-cols-11"}>
 
             <Section3DImages
-                className={"@4xl/main:col-span-3"} data={data[0]}/>
+                className={"@3xl/main:col-span-3"} data={data[0]}/>
 
             <Section3DImages
-                className={"@4xl/main:col-span-3"} data={data[1]}/>
+                className={"@3xl/main:col-span-3"} data={data[1]}/>
 
             <TransActions
-                className={"@lg/main:col-span-2 @4xl/main:col-span-5"}/>
+                className={"@lg/main:col-span-2 @3xl/main:col-span-5"}/>
         </section>
     )
 }

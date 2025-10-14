@@ -1,5 +1,5 @@
-@import "./font-face.css";
 @import "tailwindcss";
+@import "./font-face.css";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -14,6 +14,9 @@
     --breakpoint-md: 56rem;
     --breakpoint-2xl: 91rem;
     --breakpoint-3xl: 105rem;
+
+    /* container break-points */
+    --container-8xl: 85rem;
 
     /* fonts */
     --font-Inter: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif, monospace;
