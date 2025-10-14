@@ -38,27 +38,15 @@ function SideBarLinks({setMobileNavOpen, collapsed, ...props}) {
 }
 
 export default function SideBarMenu({setMobileNavOpen, collapsed}) {
-
-    //     Note:
-    //         This sidebar component uses SVG icons defined in /src/components/ui/SvgDefs.jsx.
-    //         Icons are rendered using the <use href="#id-icon"> pattern, based on the SVG <symbol> architecture.
-    //         This allows scalable, reusable, and semantic icon rendering across the dashboard.
-
-    //     توجه:
-    //         این کامپوننت سایدبار از آیکن‌های SVG استفاده می‌کند که در فایل /src/components/ui/SvgDefs.jsx تعریف شده‌اند.
-    //         آیکن‌ها با الگوی <use href="#id-icon"> رندر می‌شوند، بر اساس معماری <symbol> در SVG.
-    //         این روش امکان رندر آیکن‌های مقیاس‌پذیر، قابل استفاده مجدد، و معنایی را در کل داشبورد فراهم می‌کند.
-
     const dataLinks = [
         {
             title: "Dashboard", dataLinks: [
-                {text: "Home", url: "/", icon: "home"},
+                {text: "Dashboard", url: "/", icon: "home"},
                 {text: "Analytics", url: "/analytics", icon: "analyze"}
             ]
         },
         {
             title: "APP & PAGES", dataLinks: [
-                {text: "Email", url: "/email", icon: "email"},
                 {text: "User", url: "/user", icon: "user"},
                 {text: "Rules & Permissions", url: "/rules", icon: "lock"},
             ]

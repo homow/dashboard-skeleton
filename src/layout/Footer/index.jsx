@@ -19,7 +19,7 @@ function FooterLinks() {
 
 export default function Index() {
     return (
-        <footer id="footer" className={`flex flex-col gap-4 w-full justify-between py-3 bg-primary-bg text-[13px] xs:text-sm text-center md:flex-row md:text-start 2xl:text-base`}>
+        <footer id="footer" className={`flex flex-col gap-4 w-full justify-between py-4 bg-primary-bg text-[13px] xs:text-sm text-center md:flex-row md:text-start 2xl:text-base`}>
             <FooterCopyright/>
             <FooterLinks/>
         </footer>
