@@ -79,7 +79,7 @@
     }
 
     /* <=== media screens ===> */
-    @media (min-width: 900px) {
+    @media (min-width: 896px) {
         :root {
             --spacing-custom: 260px;
         }
