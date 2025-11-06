@@ -8,4 +8,4 @@ export default function Icon({icon, className, parentClassName}) {
             </svg>
         </span>
     )
-}
+};
