@@ -1,4 +1,4 @@
-import {cn} from "@/lib/utils/ui-utils.js";
+import {cn} from "@utils/ui-utils.js";
 
 export default function Button({text = "ارسال", onClick, type = "button", className = "", disabled = false, ...props}) {
     return (
