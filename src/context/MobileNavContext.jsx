@@ -1,5 +1,5 @@
 import {useState, createContext, useContext} from "react";
-import useScrollLock from "@hooks/";
+import useScrollLock from "@hooks/useScrollLock.jsx";
 
 const MobileNavContext = createContext(null);
 

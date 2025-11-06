@@ -3,7 +3,7 @@ import TopBar from "@/layout/TopBar";
 import MainLayout from "@/layout/MainLayout";
 import SideBar from "@/layout/SideBar";
 import Footer from "@/layout/Footer";
-import SvgDefs from "@components/ui/SvgDefs.jsx";
+import SvgDefs from "@ui/icons/SvgDefs.jsx";
 import Overlay from "@components/ui/Overlay.jsx";
 
 export default function App() {
