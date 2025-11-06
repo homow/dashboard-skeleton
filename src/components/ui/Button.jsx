@@ -6,7 +6,7 @@ export default function Button({text = "ارسال", onClick, type = "button", c
             type={type}
             onClick={onClick}
             className={cn(
-                "w-full bg-violet-600 hover:bg-violet-700 active:bg-violet-700 text-white py-2 rounded-lg transition font-medium cursor-pointer text-sm xs:text-base",
+                "w-full bg-sky-600 hover:bg-sky-700 active:bg-sky-700 text-white py-2 rounded-lg transition font-medium cursor-pointer text-sm xs:text-base",
                 disabled && "opacity-60 cursor-not-allowed",
                 className
             )}
