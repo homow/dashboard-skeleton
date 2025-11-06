@@ -1,10 +1,9 @@
 import {useEffect, useState, useRef} from "react";
-import Button from "@components/ui/Button";
-import {useAuth} from "@/context/AuthContext";
-import Input from "@components/ui/forms/Input";
-import CheckBox from "@components/ui/forms/CheckBox";
-import AlertModal from "@components/ui/modals/AlertModal";
-import {ErrorMessageInputs} from "@components/ui/Fragments";
+import Button from "@ui/Button";
+import Input from "@ui/forms/Input";
+import CheckBox from "@ui/forms/CheckBox";
+import AlertModal from "@ui/modals/AlertModal";
+import {ErrorMessageInputs} from "@ui/Fragments";
 import {cn} from "@utils/ui-utils.js";
 
 export default function Login() {
@@ -23,7 +22,7 @@ export default function Login() {
 
     // ref
     const inputRef = useRef(null);
-    const {setAuthInfo} = useAuth();
+
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
     // focus and set title
@@ -62,8 +61,8 @@ export default function Login() {
             password: password.trim(),
             remember
         };
+        console.log(userInfo);
 
-        await loginHandler(userInfo, setAlertModalData, setIsOpenAlertModal, setAuthInfo, setLoading);
         setLoading(false);
     }
 
@@ -96,9 +95,9 @@ export default function Login() {
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
                 aria-label={showPassword ? "Hide Password" : "Show Password"}
-                className="absolute right-2 top-1/2 text-sm text-gray-500 hover:text-violet-500 cursor-pointer"
+                className="absolute right-2 top-1/2 text-sm text-gray-500 hover:text-sky-500 cursor-pointer"
             >
-                {showPassword ? "مخفی" : "نمایش"}
+                {showPassword ? "hidden" : "show"}
             </button>
         )
     }
@@ -108,19 +107,11 @@ export default function Login() {
             {/* alert modal for state */}
             <AlertModal {...alertModalData} isOpen={isOpenAlertModal} setIsOpen={setIsOpenAlertModal} setData={setAlertModalData}/>
 
-            {/* logo */}
-            <img
-                id={"login-logo"}
-                className={"max-w-10 top-2 left-2 absolute xs:top-5 xs:left-5 xs:max-w-20"}
-                src={`${logo}`}
-                alt="logo"
-            />
-
             <section className="flex items-center justify-center min-h-screen">
                 <div className="max-w-9/10 w-full xs:max-w-sm sm:max-w-md bg-white/10 rounded-2xl shadow-lg space-y-6 p-3 xs:p-8">
-                    <h2 className="text-2xl font-bold text-center">خوش اومدی</h2>
+                    <h2 className="text-2xl font-bold text-center">Welcome</h2>
                     <p className="text-sm text-center text-secondary-txt">
-                        به پنل مدیریت وارد شو.
+                        Login to Dashboard
                     </p>
 
                     <form className="space-y-6" onSubmit={submitHandler}>
@@ -131,7 +122,7 @@ export default function Login() {
                                 value={email}
                                 name={"email"}
                                 ref={inputRef}
-                                label={"ایمیل"}
+                                label={"email"}
                                 autoComplete={"email"}
                                 onChange={setEmailHandler}
                                 placeholder={"you@example.com"}
@@ -144,7 +135,7 @@ export default function Login() {
                         <div>
                             <Input
                                 id="password"
-                                label={"پسورد"}
+                                label={"password"}
                                 value={password}
                                 name={"password"}
                                 placeholder={"******"}
@@ -163,13 +154,13 @@ export default function Login() {
                                 id={"remember"}
                                 checked={remember}
                                 onChange={setRemember}
-                                label={"منو یادت باشه"}
+                                label={"remember me"}
                             />
                         </div>
 
                         <Button
                             type={"submit"}
-                            text={loading ? "در حال پردازش" : "ارسال"}
+                            text={loading ? "loading" : "login"}
                             disabled={loading}
                         />
                     </form>
