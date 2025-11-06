@@ -27,7 +27,7 @@ export default function Login() {
 
     // focus and set title
     useEffect(() => {
-        document.title = "ورود به اکانت ادمین | آشیانه";
+        document.title = "login to Dashboard | Skeleton";
         inputRef?.current?.focus();
     }, []);
 
@@ -40,8 +40,8 @@ export default function Login() {
         const trimPassword = password.trim();
 
         const newErrors = {
-            email: trimmedEmail ? "" : "ایمیل رو وارد کن",
-            password: trimPassword ? "" : "پسورد رو وارد کن",
+            email: trimmedEmail ? "" : "Enter Email",
+            password: trimPassword ? "" : "Enter Password",
         }
 
         if (newErrors.email || newErrors.password) {
@@ -52,7 +52,7 @@ export default function Login() {
 
         if (!emailRegex.test(trimmedEmail)) {
             setLoading(false);
-            setErrors({...newErrors, email: "فرمت ایمیل اشتباهه"});
+            setErrors({...newErrors, email: "Email format is wrong"});
             return;
         }
 
@@ -75,7 +75,7 @@ export default function Login() {
                 email: ""
             });
         } else if (!emailRegex.test(event.target.value)) {
-            setErrors({...errors, email: "فرمت ایمیل اشتباهه"})
+            setErrors({...errors, email: "Email format is wrong"})
         }
     }
 
@@ -126,10 +126,8 @@ export default function Login() {
                                 autoComplete={"email"}
                                 onChange={setEmailHandler}
                                 placeholder={"you@example.com"}
-                                className={cn("text-sm xs:text-base", errors.email && "border-rose-600 bg-rose-600/10")}
-                                dir={"ltr"}
+                                hasError={errors.email}
                             />
-                            <ErrorMessageInputs msg={errors.email}/>
                         </div>
 
                         <div>
@@ -144,9 +142,8 @@ export default function Login() {
                                 children={<ShowPasswordButton/>}
                                 type={showPassword ? "text" : "password"}
                                 className={cn("text-sm xs:text-base", errors.password && "border-rose-600 bg-rose-600/10")}
-                                dir={"ltr"}
+                                hasError={errors.password}
                             />
-                            <ErrorMessageInputs msg={errors.password}/>
                         </div>
 
                         <div className="flex items-center justify-between text-sm text-gray-400">
