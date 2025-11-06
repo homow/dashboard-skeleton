@@ -3,7 +3,7 @@ import Button from "@ui/Button";
 import Input from "@ui/forms/Input";
 import CheckBox from "@ui/forms/CheckBox";
 import AlertModal from "@ui/modals/AlertModal";
-import {ErrorMessageInputs} from "@ui/Fragments";
+import {useAuth} from "@context/AuthContext";
 import {cn} from "@utils/ui-utils.js";
 
 export default function Login() {
@@ -23,6 +23,9 @@ export default function Login() {
     // ref
     const inputRef = useRef(null);
 
+    const {setAuthInfo} = useAuth();
+
+    // regex
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
     // focus and set title
@@ -62,6 +65,16 @@ export default function Login() {
             remember
         };
         console.log(userInfo);
+
+        setAuthInfo({
+            token: true,
+            userData: {
+                id: "1",
+                role: "admin",
+                display_name: "john",
+                email: "john@exmple.com"
+            }
+        })
 
         setLoading(false);
     }

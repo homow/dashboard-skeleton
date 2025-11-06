@@ -9,7 +9,7 @@ function AuthProvider({children}) {
         display_name: "john",
         email: "john@exmple.com",
     });
-    const [accessToken, setAccessToken] = useState(false);
+    const [accessToken, setAccessToken] = useState(true);
     const [loading, setLoading] = useState(false);
 
     const setAuthInfo = ({userData, token}) => {
@@ -39,13 +39,3 @@ const useAuth = () => {
 
 // eslint-disable-next-line react-refresh/only-export-components
 export {AuthProvider, useAuth};
-
-{
-    // eslint-disable-next-line
-    const exampleUser = {
-        id: "1",
-        role: "admin",
-        display_name: "homow",
-        email: "homow@gmail.com",
-    }
-}
