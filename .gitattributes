@@ -54,6 +54,6 @@
 # Optional: Lock files & package manifests
 # -------------------------------
 package.json      text eol=lf
-package-lock.json text eol=lf
+package-lock.json merge=ours
 pnpm-lock.yaml    text eol=lf
 yarn.lock         text eol=lf
