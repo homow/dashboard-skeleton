@@ -7,6 +7,7 @@ import PublicRoutes from "./PublicRoutes";
 const Login = lazy(() => import("@pages/Login"))
 const MainLayout = lazy(() => import("@/layout/MainLayout"));
 const Home = lazy(() => import("@pages/Home"));
+const Analytics = lazy(() => import("@pages/Analytics"));
 const Email = lazy(() => import("@pages/Email"));
 const User = lazy(() => import("@pages/User"));
 const Rules = lazy(() => import("@pages/Rules"));
@@ -30,6 +31,7 @@ const routes = [
                 element: <MainLayout/>,
                 children: [
                     {path: "/", element: <Home/>},
+                    {path: "/analytics", element: <Analytics/>},
                     {path: "/email", element: <Email/>},
                     {path: "/user", element: <User/>},
                     {path: "/rules", element: <Rules/>},
