@@ -37,6 +37,9 @@ export default function Login() {
     // login handler
     const submitHandler = async event => {
         event.preventDefault();
+
+        if (loading) return;
+
         setLoading(true);
 
         const trimmedEmail = email.trim().toLowerCase();
