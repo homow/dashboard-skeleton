@@ -4,11 +4,9 @@ import {BrowserRouter} from 'react-router-dom';
 import "@/styles/global.css";
 import App from './App';
 
-const BASE_PATH = import.meta.env.VITE_BASE_PATH || "/"
-
 createRoot(document.getElementById('root')).render(
     <StrictMode>
-        <BrowserRouter basename={BASE_PATH}>
+        <BrowserRouter>
             <App/>
         </BrowserRouter>
     </StrictMode>,
