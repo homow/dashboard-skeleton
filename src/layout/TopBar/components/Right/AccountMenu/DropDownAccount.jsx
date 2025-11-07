@@ -29,7 +29,7 @@ function DropDownAccountOptions({data, className, setOpenMenu}) {
                 return (
                     <li
                         key={link.name}
-                        className={"w-full px-4 py-0.5 *:py-1.5 *:hover:opacity-100 hover:text-white hover:bg-violet-500 active:bg-violet-500 active:text-white *:active:text-white *:hover:text-white *:transition-all *:duration-300 *:rounded-md"}>
+                        className={"w-full px-4 py-0.5 *:py-1.5 *:hover:opacity-100 hover:text-white hover:bg-sky-500 active:bg-sky-500 active:text-white *:active:text-white *:hover:text-white *:transition-all *:duration-300 *:rounded-md"}>
                         {link.url ? (
                             <Link
                                 onClick={event => onClickHandler(null, event)}
@@ -85,42 +85,31 @@ export default function DropDownAccount({setOpenMenu, open, className}) {
     // close logout modals
     const closeLogoutModalHandler = () => setOpenLogoutModal(false);
 
-    const logoutHandler = async () => {
-        try {
-            const res = await logout();
+    const logoutHandler = () => {
+        setIsOpenAlertModal(true);
+        setAlertModalData({type: "success", message: "Logout successfully."});
+        setOpenLogoutModal(false);
+        setLockScreenOpen(true);
 
-            if (res.ok) {
-                setIsOpenAlertModal(true);
-                setAlertModalData({type: "success", message: "خروج موفق بود."})
-                setOpenLogoutModal(false);
-                setLockScreenOpen(true);
-
-                setTimeout(() => {
-                    setIsOpenAlertModal(false);
-                    setAlertModalData({type: "error", message: ""});
-                    setAuthInfo({userData: {}, accessToken: null});
-                    setLockScreenOpen(false);
-                    window.location.replace(`${BASE_PATH}/login`);
-                }, 5000);
-            } else {
-                console.log("res error:", res)
-            }
-        } catch (e) {
-            console.log(e)
-        }
+        setTimeout(() => {
+            setIsOpenAlertModal(false);
+            setAlertModalData({type: "error", message: ""});
+            setAuthInfo({userData: {}, accessToken: null});
+            setLockScreenOpen(false);
+        }, 5000);
     }
 
     // drop down option
     const dropDownAccountOptionsData = [
-        {icon: "user", url: "/account", name: "اکانت"},
-        {icon: "logout", callback: openLogoutModalHandler, name: "خروج"},
+        {icon: "user", url: "/account", name: "Account"},
+        {icon: "logout", callback: openLogoutModalHandler, name: "Logout"},
     ];
 
     if (!open) return null;
 
     return (
         <div
-            className={cn("w-58 mt-2 absolute top-full left-0 z-20 bg-main-bg py-2  rounded-md shadow-2xl", className)}
+            className={cn("w-58 mt-2 absolute top-full right-0 z-20 bg-main-bg py-2  rounded-md shadow-2xl", className)}
         >
 
             {/* account info */}
@@ -137,13 +126,13 @@ export default function DropDownAccount({setOpenMenu, open, className}) {
 
             {/* confirm logout modals */}
             <ConfirmModal
-                title={"خروج از حساب"}
-                message={"مطمئنی از حسابت میخوای خارج بشی؟"}
+                title={"Logout"}
+                message={"Can you Sure you want to logout?"}
                 onConfirm={logoutHandler}
                 onCancel={closeLogoutModalHandler}
                 isOpen={openLogoutModal}
-                cancelText={"نه"}
-                confirmText={"آره"}
+                cancelText={"No"}
+                confirmText={"Yes"}
                 dangerMode={true}
             />
 
