@@ -1,5 +1,5 @@
 import {useState, useEffect} from "react";
-import Icon from "@components/ui/icons/Icon.jsx";
+import Icon from "@components/ui/icons/Icon";
 
 export default function ThemeSection() {
     const [theme, setTheme] = useState("light");

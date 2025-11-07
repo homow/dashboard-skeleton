@@ -1,4 +1,4 @@
-export default function Loading({msg = "Please wait..."}) {
+export default function Loading({message = "Please wait..."}) {
     return (
         <div
             className="fixed size-full inset-0 z-50 flex items-center justify-center bg-main-bg/60 dark:bg-main-bg/90 backdrop-blur-sm"
@@ -141,7 +141,7 @@ export default function Loading({msg = "Please wait..."}) {
                 </div>
 
                 <p className="text-lg font-medium text-gray-700 dark:text-gray-200">
-                    {msg}
+                    {message}
                 </p>
 
                 {/* Local style block with keyframes */}
