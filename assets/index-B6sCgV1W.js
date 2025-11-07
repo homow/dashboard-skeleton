@@ -1,0 +1,1 @@
+import{r,j as t}from"./react-core-CgDxZGm3.js";import"./vendor-7OC5HNn7.js";function o(){return r.useEffect(()=>{document.title="Users | Dashboard"},[]),t.jsx("h1",{children:"User"})}export{o as default};

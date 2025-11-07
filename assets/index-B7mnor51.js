@@ -1,0 +1,1 @@
+import{r as t,j as r}from"./react-core-CgDxZGm3.js";import"./vendor-7OC5HNn7.js";function i(){return t.useEffect(()=>{document.title="Email | Dashboard"},[]),r.jsx("h1",{children:"Email"})}export{i as default};

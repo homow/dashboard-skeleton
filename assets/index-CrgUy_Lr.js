@@ -1,0 +1,1 @@
+import{r as s,j as e}from"./react-core-CgDxZGm3.js";import"./vendor-7OC5HNn7.js";function o(){return s.useEffect(()=>{document.title="Rules & Permissions | Dashboard"},[]),e.jsx("h1",{children:"Rules & Permissions"})}export{o as default};
