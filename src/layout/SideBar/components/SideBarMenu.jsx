@@ -1,14 +1,48 @@
+import {useEffect, useState} from "react";
 import {NavLink} from "react-router-dom";
+import {useMobileNav} from "@context/MobileNavContext";
+import {useCollapsedMenu} from "@context/CollapsedMenuContext";
+import Icon from "@components/ui/icons/Icon";
+import {cn} from "@utils/ui-utils.js";
 
-function SideBarLinks({setMobileNavOpen, collapsed, ...props}) {
+function SideBarLinks({...props}) {
     const {title, dataLinks} = props.data;
+    const {setOpenMobileNav} = useMobileNav();
+    const {collapsed} = useCollapsedMenu();
+    const [collapsedState, setCollapsedState] = useState(false);
+
+    // applySize
+    useEffect(() => {
+        // applySize handler
+        const applySize = collapse => {
+            if (window.innerWidth < 896) {
+                setCollapsedState(false);
+            } else {
+                setCollapsedState(collapse);
+            }
+        };
+        applySize(collapsed); // run when component mounted
+
+        window.addEventListener("resize", applySize.bind(null, collapsed));
+
+        // cleanUp event
+        return () => {
+            window.removeEventListener("resize", applySize.bind(null, collapsed));
+        }
+    }, [collapsed]);
 
     return (
         <div>
             {/* title links */}
-            <div className={`h-4.5 flex items-center gap-4 ${collapsed && "px-2"}`}>
-                <div className={`w-10 h-px bg-disable-txt ${collapsed && "hidden"}`}></div>
-                <p className={`text-sm text-disable-txt ${collapsed && "hidden"}`}>{title}</p>
+            <div className={cn("h-4.5 flex items-center gap-4", collapsedState && "px-2")}>
+
+                {/* border */}
+                <div className={cn("w-10 h-px bg-disable-txt", collapsedState && "hidden")}></div>
+
+                {/* title */}
+                <p className={cn("text-sm text-disable-txt", collapsedState && "hidden")}>{title}</p>
+
+                {/* border */}
                 <div className="flex-1 h-px bg-disable-txt"></div>
             </div>
 
@@ -16,17 +50,13 @@ function SideBarLinks({setMobileNavOpen, collapsed, ...props}) {
             <ul className={"mt-3 space-y-1.5"}>
                 {dataLinks && dataLinks.map(link => (
                     <li key={link.text}>
-                        <NavLink onClick={() => setMobileNavOpen && setMobileNavOpen(false)} to={link.url} className={({isActive}) => `h-10.5 flex items-center pl-5.5 py-2 flex-row gap-3 w-full rounded-r-full ${isActive && "grad-links"}`}>
+                        <NavLink onClick={() => setOpenMobileNav && setOpenMobileNav(false)} to={link.url} className={({isActive}) => cn("h-10.5 flex items-center pl-5.5 py-2 flex-row gap-3 w-full rounded-r-full hover:opacity-100", isActive && "grad-links", !isActive && "hover:bg-sky-300 hover:text-gray-900  active:bg-sky-300 active:text-gray-900")}>
 
                             {/* icon */}
-                            <span>
-                                <svg className={"size-5"}>
-                                    <use href={`#${link.icon}-icon`}></use>
-                                </svg>
-                            </span>
+                            <Icon icon={link.icon}/>
 
                             {/* text of link */}
-                            <span className={`${collapsed && "hidden"}`}>
+                            <span className={cn(collapsedState && "hidden")}>
                                 {link.text}
                             </span>
                         </NavLink>
@@ -37,7 +67,7 @@ function SideBarLinks({setMobileNavOpen, collapsed, ...props}) {
     )
 }
 
-export default function SideBarMenu({setMobileNavOpen, collapsed}) {
+export default function SideBarMenu() {
     const dataLinks = [
         {
             title: "Dashboard", dataLinks: [
@@ -56,7 +86,7 @@ export default function SideBarMenu({setMobileNavOpen, collapsed}) {
     return (
         <div className={"space-y-5 pb-2"}>
             {dataLinks.length > 0 && dataLinks.map(link => (
-                <SideBarLinks key={link.title} data={link} collapsed={collapsed} setMobileNavOpen={setMobileNavOpen}/>
+                <SideBarLinks key={link.title} data={link}/>
             ))}
         </div>
     )
