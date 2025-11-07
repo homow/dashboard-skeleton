@@ -1,23 +1,26 @@
-import {useEffect, useCallback} from "react";
+import {useEffect, useCallback, useState} from "react";
 import {Link} from "react-router-dom";
-import {cn} from "@utils/ui-utils.js";
 import Icon from "@components/ui/icons/Icon";
 import {useCollapsedMenu} from "@context/CollapsedMenuContext";
+import {cn} from "@utils/ui-utils.js";
 
 export default function SideBarHeader() {
+    const [titleStyle, setTitleStyle] = useState("");
     const {collapsed, setCollapsed} = useCollapsedMenu();
 
     // apply collapsed state from size
     const applySpacing = useCallback(collapsedState => {
         if (window.innerWidth < 896) {
             document.documentElement.style.setProperty("--spacing-custom", "0px");
+            setTitleStyle("")
         } else {
             document.documentElement.style.setProperty(
                 "--spacing-custom",
                 collapsedState ? "80px" : "260px"
             );
+            setTitleStyle(collapsed ? "hidden" : "");
         }
-    }, []);
+    }, [collapsed]);
 
     // run in component mounted
     useEffect(() => {
@@ -36,6 +39,7 @@ export default function SideBarHeader() {
 
     // toggle collapse when click to button
     const toggleCollapse = () => {
+        setTitleStyle(collapsed ? "hidden" : "");
         const newState = !collapsed;
         setCollapsed(newState);
         localStorage.setItem("collapsedMenu", JSON.stringify(newState));
@@ -52,7 +56,7 @@ export default function SideBarHeader() {
                         <use href="#logo-icon"></use>
                     </svg>
                 </span>
-                <span className={`font-medium ${collapsed && "hidden"}`}>Material</span>
+                <span className={cn("font-medium", titleStyle)}>Material</span>
             </Link>
 
             <span
