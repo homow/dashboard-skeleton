@@ -41,7 +41,7 @@ const routes = [
             }
         ]
     },
-]
+];
 
 export default function AppRoutes() {
     return (
