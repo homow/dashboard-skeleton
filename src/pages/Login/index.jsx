@@ -88,11 +88,17 @@ export default function Login() {
     // set email handler
     const setEmailHandler = event => {
         setEmail(event.target.value);
-        if (emailRegex.test(event.target.value.trim()) && errors.email) {
+        if (emailRegex.test(event.target.value.trim()) && errors.email.includes("فرمت")) {
             setErrors({
                 ...errors,
                 email: ""
             });
+        }
+        if (errors.email.includes("وارد")) {
+            setErrors({
+                ...errors,
+                email: ""
+            })
         }
     }
 
@@ -152,7 +158,7 @@ export default function Login() {
                                     type="button"
                                     onClick={() => setShowPassword(!showPassword)}
                                     aria-label={showPassword ? "Hide Password" : "Show Password"}
-                                    className="absolute right-2 top-1/2 text-sm text-gray-500 hover:text-sky-500 cursor-pointer"
+                                    className="absolute right-2 top-1/2 text-sm text-gray-500 hover:text-sky-500 active:text-sky-500 cursor-pointer"
                                 >
                                     {showPassword ? "مخفی" : "نمایش"}
                                 </button>
