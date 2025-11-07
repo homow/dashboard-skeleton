@@ -135,3 +135,9 @@ All icons are defined in `/src/components/ui/SvgDefs.jsx`.
 ### 🌐 README Versions
 - 🇺🇸 [English Version](./README.md)
 - 🇮🇷 [نسخه فارسی](./README.FA.md)
+
+---
+
+### 🌐 Project Versions
+- 🇺🇸 [LTR Version](https://github.com/homow/dashboard-skeleton)
+- 🇮🇷 [RTL / نسخه فارسی راست‌چین](https://github.com/homow/dashboard-skeleton/tree/rtl)

@@ -128,3 +128,9 @@ src/components/
 ### 🌐 README Versions
 - 🇺🇸 [English Version](./README.md)
 - 🇮🇷 [نسخه فارسی](./README.FA.md)
+
+---
+
+### 🌐 نسخه های پروژه
+- 🇺🇸 [LTR Version / چپ چین](https://github.com/homow/dashboard-skeleton)
+- 🇮🇷 [RTL / نسخه فارسی راست‌چین](https://github.com/homow/dashboard-skeleton/tree/rtl)
