@@ -9,7 +9,7 @@ const homeRoutesData = [
 ]
 
 export default function HomePageLayout() {
-    const [activeTab, setActiveTab] = useState("page-1");
+    const [activeTab, setActiveTab] = useState("Page-1");
 
     return (
         <>
@@ -23,7 +23,7 @@ export default function HomePageLayout() {
                         <button
                             onClick={() => setActiveTab(data.name)}
                             key={data.name}
-                            className={cn(" relative cursor-pointer ", activeTab === data.name && "text-sky-500")}
+                            className={cn("relative cursor-pointer ", activeTab === data.name && "text-sky-500")}
                         >
                             {data.name}
                             <span className={cn("absolute inline-block left-1/2 -translate-x-1/2 -bottom-2 bg-primary-txt w-full h-[1.7px]", activeTab === data.name && "bg-sky-500")}/>

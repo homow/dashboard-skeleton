@@ -1,7 +1,7 @@
 export default function TopSection() {
     return (
         <div className="mb-10 main-components">
-            <p className="mb-6" dir={"rtl"} style={{ fontFamily: "sans-serif" }}>
+            <p className="mb-6" dir={"rtl"} style={{fontFamily: "sans-serif"}}>
                 پروژه‌ای برای ساخت سریع پنل مدیریت با React و Tailwind CSS 4.
             </p>
 
@@ -23,7 +23,15 @@ export default function TopSection() {
                     rel="noopener noreferrer"
                     href="https://github.com/homow/dashboard-skeleton"
                 >
-                    get source here
+                    get LTR source here
+                </a>
+                <a
+                    className="inline-block max-w-max text-sky-500 hover:underline active:underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://github.com/homow/dashboard-skeleton"
+                >
+                    get RTL source here
                 </a>
             </div>
         </div>
