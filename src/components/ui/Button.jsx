@@ -1,6 +1,6 @@
 import {cn} from "@utils/ui-utils.js";
 
-export default function Button({text = "ارسال", onClick, type = "button", className = "", disabled = false, ...props}) {
+export default function Button({text = "Click", onClick, type = "button", className = "", disabled = false, ...props}) {
     return (
         <button
             type={type}
