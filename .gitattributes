@@ -1,24 +1,59 @@
+# -------------------------------
 # Normalize line endings across platforms
+# -------------------------------
 * text=auto
 
-# Force LF for source code and config files
-*.js       text eol=lf
-*.jsx      text eol=lf
-*.ts       text eol=lf
-*.tsx      text eol=lf
-*.json     text eol=lf
-*.html     text eol=lf
-*.css      text eol=lf
-*.scss     text eol=lf
-*.yml      text eol=lf
-*.md       text eol=lf
+# -------------------------------
+# Force LF for source code files
+# -------------------------------
+*.js        text eol=lf
+*.jsx       text eol=lf
+*.ts        text eol=lf
+*.tsx       text eol=lf
+*.json      text eol=lf
+*.html      text eol=lf
+*.css       text eol=lf
+*.scss      text eol=lf
+*.less      text eol=lf
+*.yml       text eol=lf
+*.yaml      text eol=lf
+*.md        text eol=lf
 *.gitignore text eol=lf
-*.config   text eol=lf
-*.components text eol=lf
-*.styles   text eol=lf
+*.config    text eol=lf
+*.common    text eol=lf
+*.styles    text eol=lf
 
-# Treat assets as binary
-*.svg      binary
-*.png      binary
-*.jpg      binary
-*.webp     binary
+# -------------------------------
+# Shell & script files (LF)
+# -------------------------------
+*.sh        text eol=lf
+*.bash      text eol=lf
+*.zsh       text eol=lf
+*.ps1       text eol=lf
+*.bat       text eol=crlf
+
+# -------------------------------
+# Treat assets and binaries as binary
+# -------------------------------
+*.svg       binary
+*.png       binary
+*.jpg       binary
+*.jpeg      binary
+*.webp      binary
+*.gif       binary
+*.ico       binary
+*.mp4       binary
+*.mp3       binary
+*.woff      binary
+*.woff2     binary
+*.eot       binary
+*.ttf       binary
+*.otf       binary
+
+# -------------------------------
+# Optional: Lock files & package manifests
+# -------------------------------
+package.json      text eol=lf
+package-lock.json merge=ours
+pnpm-lock.yaml    text eol=lf
+yarn.lock         text eol=lf

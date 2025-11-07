@@ -1,14 +1,22 @@
-import {useState} from 'react'
-import SideBarHeader from "./SideBarHeader.jsx";
-import SideBarMenu from "./SideBarMenu.jsx";
+import {CollapsedMenuProvider} from "@context/CollapsedMenuContext";
+import SideBarHeader from "./components/SideBarHeader";
+import SideBarMenu from "./components/SideBarMenu";
+import {useMobileNav} from "@context/MobileNavContext";
+import {cn} from "@/lib/utils/ui-utils.js";
 
-export default function SideBar({setMobileNavOpen, mobileNavOpen}) {
-    const [collapsed, setCollapsed] = useState(false)
+export default function SideBar() {
+    const {openMobileNav} = useMobileNav();
 
     return (
-        <aside id="side-bar" className={`fixed overflow-hidden top-0 pr-4.5 transition-all text-sm max-md:mobile-nav ${mobileNavOpen ? "max-md:left-0" : "max-md:-left-58"} md:w-custom md:text-base}`}>
-            <SideBarHeader collapsed={collapsed} setCollapsed={setCollapsed}/>
-            <SideBarMenu setMobileNavOpen={setMobileNavOpen} collapsed={collapsed}/>
-        </aside>
+        <CollapsedMenuProvider>
+            <aside id="side-bar" className={cn("fixed overflow-hidden top-0 pr-4.5 transition-all text-sm max-md:mobile-nav md:w-custom md:text-base", openMobileNav ? "max-md:left-0" : "max-md:-left-58")}>
+
+                {/* side bar header */}
+                <SideBarHeader/>
+
+                {/* side bar nav menu links */}
+                <SideBarMenu/>
+            </aside>
+        </CollapsedMenuProvider>
     )
 }

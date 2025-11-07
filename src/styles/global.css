@@ -52,7 +52,15 @@
     html {
         @apply transition-all scroll-smooth;
     }
-
+    *::-webkit-scrollbar {
+        @apply size-3;
+    }
+    *::-webkit-scrollbar-track {
+        @apply bg-stone-800;
+    }
+    *::-webkit-scrollbar-thumb {
+        @apply bg-sky-500 border-x-1 border-stone-800 rounded-none;
+    }
     body {
         @apply font-Inter font-normal leading-[150%] text-base bg-primary-bg text-primary-txt tracking-wider;
     }
@@ -75,10 +83,6 @@
 
     h3 {
         @apply text-xl md:text-2xl lg:text-3xl;
-    }
-
-    a {
-        @apply hover:opacity-70 active:opacity-70 transition-all;
     }
 
     /* <=== media screens ===> */

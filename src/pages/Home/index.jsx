@@ -1,5 +1,5 @@
 import {useEffect} from "react";
-import HomePageLayout from "./HomePageLayout.jsx";
+import HomePageLayout from "./HomePageLayout";
 
 export default function Home() {
     useEffect(() => {
