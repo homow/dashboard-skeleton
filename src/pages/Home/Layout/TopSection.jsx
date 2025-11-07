@@ -29,7 +29,7 @@ export default function TopSection() {
                     className="inline-block max-w-max text-sky-500 hover:underline active:underline"
                     target="_blank"
                     rel="noopener noreferrer"
-                    href="https://github.com/homow/dashboard-skeleton"
+                    href="https://github.com/homow/dashboard-skeleton/tree/rtl"
                 >
                     get RTL source here
                 </a>

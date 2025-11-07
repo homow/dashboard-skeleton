@@ -85,10 +85,6 @@
         @apply text-xl md:text-2xl lg:text-3xl;
     }
 
-    a {
-        @apply hover:text-shadow-sky-400 active:text-shadow-sky-400 transition-all;
-    }
-
     /* <=== media screens ===> */
     @media (min-width: 896px) {
         :root {
