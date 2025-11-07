@@ -91,7 +91,7 @@ export default function AlertModal({message = "", type, isOpen = false, setIsOpe
                             btnBg
                         )}
                     >
-                        بستن
+                        close
                     </button>
                 </div>
 
