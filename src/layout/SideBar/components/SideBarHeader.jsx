@@ -50,7 +50,7 @@ export default function SideBarHeader() {
         <div className={"relative flex items-center justify-between h-16"}>
 
             {/* brand and logo */}
-            <Link to="/" className={"pr-4 flex flex-row items-center gap-4 hover:text-primary-txt"}>
+            <Link to="/" className={"pl-5.5 flex flex-row items-center gap-4 hover:text-primary-txt"}>
                <span>
                     <svg className={"w-7.5 h-[23px]"}>
                         <use href="#logo-icon"></use>
