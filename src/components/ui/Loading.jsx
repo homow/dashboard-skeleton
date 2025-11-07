@@ -1,4 +1,4 @@
-export default function Loading({msg = "لطفاً صبر کنید..."}) {
+export default function Loading({msg = "Please wait..."}) {
     return (
         <div
             className="fixed size-full inset-0 z-50 flex items-center justify-center bg-main-bg/60 dark:bg-main-bg/90 backdrop-blur-sm"
