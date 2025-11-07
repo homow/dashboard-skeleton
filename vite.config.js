@@ -58,7 +58,7 @@ export default defineConfig(({mode}) => {
             env.ANALYZE === "true" &&
             visualizer({
                 filename: "analyze.html",
-                open: true,
+                open: false,
                 gzipSize: true,
                 brotliSize: true
             }),
