@@ -37,6 +37,9 @@ export default function Login() {
     // login handler
     const submitHandler = async event => {
         event.preventDefault();
+
+        if (loading) return;
+
         setLoading(true);
 
         const trimmedEmail = email.trim().toLowerCase();
@@ -88,7 +91,13 @@ export default function Login() {
     // set email handler
     const setEmailHandler = event => {
         setEmail(event.target.value);
-        if (emailRegex.test(event.target.value.trim()) && errors.email) {
+        if (emailRegex.test(event.target.value.trim()) && errors.email.includes("format")) {
+            setErrors({
+                ...errors,
+                email: ""
+            });
+        }
+        if (errors.email.includes("Enter")) {
             setErrors({
                 ...errors,
                 email: ""
@@ -103,20 +112,6 @@ export default function Login() {
             ...errors,
             password: ""
         });
-    }
-
-    // show and hide password button
-    const ShowPasswordButton = () => {
-        return (
-            <button
-                type="button"
-                onClick={() => setShowPassword(!showPassword)}
-                aria-label={showPassword ? "Hide Password" : "Show Password"}
-                className="absolute right-2 top-1/2 text-sm text-gray-500 hover:text-sky-500 cursor-pointer"
-            >
-                {showPassword ? "hidden" : "show"}
-            </button>
-        )
     }
 
     return (
@@ -156,11 +151,19 @@ export default function Login() {
                                 placeholder={"******"}
                                 parentClassName={"relative"}
                                 onChange={setPasswordHandler}
-                                children={<ShowPasswordButton/>}
                                 type={showPassword ? "text" : "password"}
                                 className={cn("text-sm xs:text-base", errors.password && "border-rose-600 bg-rose-600/10")}
                                 hasError={errors.password}
-                            />
+                            >
+                                <button
+                                    type="button"
+                                    onClick={() => setShowPassword(!showPassword)}
+                                    aria-label={showPassword ? "Hide Password" : "Show Password"}
+                                    className="absolute right-2 top-1/2 text-sm text-gray-500 hover:text-sky-500 active:text-sky-500 cursor-pointer"
+                                >
+                                    {showPassword ? "hidden" : "show"}
+                                </button>
+                            </Input>
                         </div>
 
                         <div className="flex items-center justify-between text-sm text-gray-400">
