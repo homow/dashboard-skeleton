@@ -88,13 +88,11 @@ export default function Login() {
     // set email handler
     const setEmailHandler = event => {
         setEmail(event.target.value);
-        if (emailRegex.test(event.target.value) && errors.email) {
+        if (emailRegex.test(event.target.value.trim()) && errors.email) {
             setErrors({
                 ...errors,
                 email: ""
             });
-        } else if (!emailRegex.test(event.target.value)) {
-            setErrors({...errors, email: "Email format is wrong"})
         }
     }
 
