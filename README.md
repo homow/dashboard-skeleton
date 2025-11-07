@@ -1,123 +1,116 @@
-### 🌐 README Versions
+### 🌐 نسخه های README
 - 🇺🇸 [English Version](./README.md)
-- 🇮🇷 [نسخه فارسی](./README.FA.md)
+- 🇮🇷 [نسخه فارسی](README.EN.md)
 
 ---
 
-### 🌐 Project Versions
-- 🇺🇸 [LTR Version](https://github.com/homow/dashboard-skeleton)
+### 🌐 نسخه های پروژه
+- 🇺🇸 [LTR Version / چپ چین](https://github.com/homow/dashboard-skeleton)
 - 🇮🇷 [RTL / نسخه فارسی راست‌چین](https://github.com/homow/dashboard-skeleton/tree/rtl)
 
 ---
 
-# 🧩 Dashboard Template
+# 🧩 قالب پنل مدیریت (Dashboard Template)
 
-A clean, minimal, and fast **React Dashboard Template** built with the latest modern stack.  
-Responsive sidebar for both mobile and desktop, plus built-in **Dark/Light mode** support.
-
----
-
-## ⚙️ Tech Stack
-
-- ⚛️ **React 19**
-- 🌐 **React Router 7**
-- 🧹 **ESLint 9**
-- 🎨 **Tailwind CSS 4**
-- ⚡ **Vite 7**
-- 🦀 **SWC 4**
+یک قالب تمیز و سریع برای ساخت پنل‌های مدیریت با **React** و **Tailwind CSS 4**.  
+دارای منوی واکنش‌گرا برای موبایل و دسکتاپ و پشتیبانی از **حالت تاریک و روشن** 🌗
 
 ---
 
-## 🚀 Features
+## ⚙️ تکنولوژی‌ها
 
-- 📱 Responsive sidebar (mobile & desktop)
-- 🌗 Dark / Light theme toggle
-- 🧠 Clean structure for scalable dashboards
-- 🧩 Ready to extend with routes and components
-
----
-
-### 🔗 Preview
-
-> 🚀 **Live Demo:** [**Dashboard Skeleton (GitHub Pages)**](https://homow.github.io/dashboard-skeleton)  
-> Explore the live preview of the dashboard structure, including responsive menu and dark/light themes.
+- ⚛️ React 19
+- 🌐 React Router 7
+- 🧹 ESLint 9
+- 🎨 Tailwind CSS 4
+- ⚡ Vite 7
+- 🦀 SWC 4
 
 ---
 
-## 🧭 Get Started
+## 🚀 ویژگی‌ها
+
+- 📱 منوی واکنش‌گرا برای موبایل و دسکتاپ
+- 🌗 حالت تاریک و روشن
+- 🧠 ساختار تمیز و آماده برای توسعه بیشتر
+- 🧩 مناسب برای ساخت سریع داشبوردهای سفارشی
+
+---
+
+### 🔗 پیش‌نمایش
+
+> 🚀 **دمو زنده:** [**Dashboard Skeleton (GitHub Pages)**](https://homow.github.io/dashboard-skeleton)  
+> پیش‌نمایش زنده از ساختار داشبورد شامل منوی واکنش‌گرا و تم‌های تاریک و روشن.
+
+ ---
+
+## 📦 نحوه استفاده
 
 ```bash
-# Clone this repository
 git clone https://github.com/homow/dashboard-skeleton.git
-
-# Navigate
 cd dashboard-skeleton
-
-# Install dependencies
 npm install
-
-# Run development server
 npm run dev
 ```
 
-📁 Project Structure & Usage
-
-```markdown
+📁 ساختار پروژه و نحوه استفاده
+```
 dashboard-skeleton/
-├── src/                    # Main source folder (React + Vite)
-│   ├── assets/             # Images and static assets
-│   ├── components/         # Reusable UI components
-│   ├── layout/             # Page layouts and structure (MainLayout, TopBar, SideBar)
-│   ├── pages/              # Main application pages
-│   ├── routes/             # App routing and navigation
-│   ├── styles/             # CSS files or Tailwind configuration
-│   ├── App.jsx             # Root React component
-│   └── main.jsx            # Entry point (React + Vite)
-├── eslint.config.js        # ESLint configuration for code linting
-├── jsconfig.json           # Path aliases configuration for IDE support
-└── vite.config.js          # Vite configuration (base path, plugins, etc.)
+├── src/                    # منبع اصلی پروژه (React + Vite)
+│   ├── assets/             # تصاویر، فایل‌های استاتیک داخلی
+│   ├── components/         # کامپوننت‌های قابل استفاده مجدد
+│   ├── layout/             # ساختار و اسکلت‌بندی صفحات (مثل MainLayout, TopBar, SideBar)
+│   ├── pages/              # صفحات اصلی اپلیکیشن
+│   ├── routes/             # تعریف مسیرها و روت‌بندی
+│   ├── styles/             # فایل‌های CSS یا Tailwind config
+│   ├── App.jsx             # کامپوننت اصلی اپلیکیشن
+│   └── main.jsx            # نقطه‌ی ورود React + Vite
+├── eslint.config.js        # تنظیمات ESLint برای بررسی کد
+├── jsconfig.json           # تنظیمات مسیرها برای ادیتور
+└── vite.config.js          # تنظیمات Vite (base path, plugins, ...)
 ```
 
-Everything is already set up — you just need to add your pages and configure the routes.
-Here’s how you can get started:
+پروژه به‌صورت کامل آماده است — فقط کافیه صفحات خودت رو بسازی و مسیرها رو تنظیم کنی.
+در ادامه، مسیرهای مهم برای شخصی‌سازی آورده شده:
 
-⚙️ Steps
+⚙️ مراحل کار
 
-Create your pages:
-Add your new pages inside:
+ایجاد صفحات جدید:
+تمام صفحات در مسیر زیر قرار می‌گیرند:
 src/pages/
 
-Define your routes:
-Manage all routes in:
+تعریف مسیرها (Routes):
+مسیرها در فایل زیر مدیریت می‌شوند:
 src/routes/AppRoutes.jsx
 
-Customize the sidebar:
-Edit links and menu items in:
+ویرایش منو و لینک‌ها:
+برای تغییر ساختار سایدبار، فایل زیر را بررسی کن:
 src/layout/SideBar/SideBarMenu.jsx
 
-Reusable components:
-All shared components live in:
+کامپوننت‌های قابل‌استفاده مجدد:
+همه‌ی کامپوننت‌های عمومی در مسیر زیر هستند:
 src/components/
 
-Built-in features:
+ویژگی‌های از پیش‌ساخته:
 
-Dark / Light mode 🌗
+پشتیبانی از حالت تاریک / روشن 🌗
 
-Responsive sidebar 📱
+سایدبار واکنش‌گرا 📱
 
-Ready-to-go layout for fast development ⚡
+ساختار آماده برای توسعه سریع ⚡
 
-🧭 Summary
+🧭 خلاصه
 
-The layout, navigation, and design are ready —
-just add your own pages and start building 🚀
+ساختار اصلی، ناوبری و ظاهر آماده‌اند —
+فقط کافیه صفحات خودت رو اضافه کنی و پروژه‌ات رو گسترش بدی 🚀
 
 ---
 
-### 🔗 Icon System
+###  🔗 سیستم آیکون‌ها
 
-Icons are rendered using SVG `<use>` referencing `<symbol>` definitions.  
-All icons are defined in `/src/components/ui/SvgDefs.jsx`.
+آیکون‌ها با استفاده از تگ SVG و عنصر <use> که به تعاریف <symbol> ارجاع می‌دهد، رندر می‌شن.
+تمام آیکون‌ها در فایل /src/components/ui/SvgDefs.jsx تعریف شده‌اند.
+مثال استفاده:
 
 ```jsx
 <svg className="size-5">
@@ -126,12 +119,12 @@ All icons are defined in `/src/components/ui/SvgDefs.jsx`.
 ```
 
 ---
+### 💡 توسعه‌دهنده
 
-### 💡 Author
+> 👨‍💻 ساخته شد توسط [**homow**](https://github.com/homow)  
+> ساخته‌شده با ❤️ برای توسعه‌دهندگانی که عاشق رابط‌های کاربری ساده و تمیز هستند.
 
-> 👨‍💻 Made by [**homow**](https://github.com/homow)  
-> Crafted with ❤️ for developers who love clean & minimal UI.
 
-### 🌐 README Versions
+### 🌐 نسخه های README
 - 🇺🇸 [English Version](./README.md)
-- 🇮🇷 [نسخه فارسی](./README.FA.md)
+- 🇮🇷 [نسخه فارسی](README.EN.md)
