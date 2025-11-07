@@ -7,7 +7,6 @@ import ConfirmModal from "@components/ui/modals/ConfirmModal";
 import AccountAvatar from "../../common/AccountAvatar";
 import Icon from "@components/ui/icons/Icon";
 import {useAuth} from "@context/AuthContext";
-import BASE_PATH from "@/config.js";
 
 function DropDownAccountOptions({data, className, setOpenMenu}) {
     const iconElem = icon => <Icon icon={icon} className={"size-5"}/>;
@@ -150,6 +149,8 @@ export default function DropDownAccount({setOpenMenu, open, className}) {
                 setData={setAlertModalData}
                 setIsOpen={setIsOpenAlertModal}
             />
+
+            {/* overlay and screen locked when user logout */}
             <Overlay
                 flag={lockScreenOpen}
                 lock={true}
