@@ -2,6 +2,13 @@
 - 🇺🇸 [English Version](./README.md)
 - 🇮🇷 [نسخه فارسی](./README.FA.md)
 
+---
+
+### 🌐 Project Versions
+- 🇺🇸 [LTR Version](https://github.com/homow/dashboard-skeleton)
+- 🇮🇷 [RTL / نسخه فارسی راست‌چین](https://github.com/homow/dashboard-skeleton/tree/rtl)
+
+---
 
 # 🧩 Dashboard Template
 
