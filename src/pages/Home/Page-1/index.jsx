@@ -1,4 +1,4 @@
-export default function TopSection() {
+export default function Page1() {
     return (
         <div className="mb-10 main-components">
             <p className="mb-6" dir={"rtl"} style={{fontFamily: "sans-serif"}}>

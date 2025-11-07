@@ -1,7 +1,7 @@
 import {useState} from "react";
-import Layout from "./Layout";
 import {cn} from "@utils/ui-utils.js";
-import Page2 from "@pages/Home/routes/Page2/index.jsx";
+import Page1 from "./Page-1";
+import Page2 from "./Page-2";
 
 const homeRoutesData = [
     {name: "Page-1"},
@@ -33,7 +33,7 @@ export default function HomePageLayout() {
             </section>
 
             <section>
-                {activeTab === "Page-1" && <Layout/>}
+                {activeTab === "Page-1" && <Page1/>}
                 {activeTab === "Page-2" && <Page2/>}
             </section>
         </>
