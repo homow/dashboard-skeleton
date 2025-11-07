@@ -2,7 +2,7 @@ import {useEffect, useRef, useState} from "react";
 import {cn} from "@utils/ui-utils.js";
 import {getBgHeader, getBtnBg, getTitle, getBgBar} from "@utils/alertHelpers";
 
-export default function AlertModal({message = "", type, isOpen = false, setIsOpen, setData, closeDelay = 5000}) {
+export default function AlertModal({message, type, isOpen = false, setIsOpen, setData, closeDelay = 5000}) {
     const [barWidth, setBarWidth] = useState(100)
     const buttonRef = useRef(null);
 
