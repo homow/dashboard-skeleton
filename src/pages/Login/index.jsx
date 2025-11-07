@@ -66,17 +66,23 @@ export default function Login() {
         };
         console.log(userInfo);
 
-        setAuthInfo({
-            token: true,
-            userData: {
-                id: "1",
-                role: "admin",
-                display_name: "john",
-                email: "john@exmple.com"
-            }
-        })
+        setAlertModalData({type: "success", message: "Login successfully."});
+        setIsOpenAlertModal(true);
 
-        setLoading(false);
+        setTimeout(() => {
+            setAuthInfo({
+                token: true,
+                userData: {
+                    id: "1",
+                    role: "admin",
+                    display_name: "john",
+                    email: "john@exmple.com"
+                }
+            })
+
+            setLoading(false);
+            setIsOpenAlertModal(false);
+        }, 5000)
     }
 
     // set email handler
