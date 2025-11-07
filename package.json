@@ -7,7 +7,11 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist",
+    "update-main": "git checkout main && git fetch --all --prune && git pull origin main",
+    "build-deploy": "vite build && npm run deploy",
+    "publish-all": "npm run update-main && npm run build-deploy"
   },
   "dependencies": {
     "clsx": "^2.1.1",
@@ -26,8 +30,9 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.22",
     "globals": "^16.4.0",
-    "tailwindcss": "^4.1.14",
     "rollup-plugin-visualizer": "^6.0.5",
+    "tailwindcss": "^4.1.14",
+    "gh-pages": "^6.3.0",
     "vite": "^7.1.7"
   }
 }
