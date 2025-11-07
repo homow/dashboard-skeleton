@@ -10,7 +10,11 @@ function AuthProvider({children}) {
         email: "john@exmple.com",
     });
     const [accessToken, setAccessToken] = useState(true);
+
+    /* eslint-disable no-unused-vars */
+    // noinspection JSUnusedLocalSymbols
     const [loading, setLoading] = useState(false);
+    /* eslint-enable no-unused-vars */
 
     const setAuthInfo = ({userData, token}) => {
         setUser(userData);
