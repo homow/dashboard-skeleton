@@ -2,7 +2,7 @@ import {useEffect} from "react";
 
 export default function Email() {
     useEffect(() => {
-        document.title = 'Email | Dashboard';
+        document.title = 'ایمیل | داشبورد';
     }, [])
 
     return (

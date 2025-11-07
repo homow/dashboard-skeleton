@@ -1,20 +1,27 @@
-import Notification from "./Notification/Notification";
-import Account from "./AccountMenu/AccountMenu";
-import ThemeSection from "./ThemeSection/ThemeSection";
-import SearchBar from "./SearchBar/SearchBar";
+import {useMobileNav} from "@context/MobileNavContext";
 
-export default function LeftTopBar() {
+function OpenMobileNavMenuBtn() {
+    const {setOpenMobileNav} = useMobileNav();
+
     return (
-        <div className={"flex items-center justify-between gap-4 py-3 md:flex-1"}>
+        <span
+            onClick={
+                () => {
+                    setOpenMobileNav(true);
+                }}
+            className={"cursor-pointer md:hidden"}
+        >
+            <svg className={"size-6 -scale-x-100"}>
+                <use href="#bars-icon"></use>
+            </svg>
+        </span>
+    )
+}
 
-            {/* search bar */}
-            <SearchBar/>
-
-            <div className={"flex items-center justify-between gap-4 py-3"}>
-                <ThemeSection/>
-                <Notification/>
-                <Account/>
-            </div>
+export default function Right() {
+    return (
+        <div className={"md:hidden"}>
+            <OpenMobileNavMenuBtn/>
         </div>
     )
 }

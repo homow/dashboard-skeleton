@@ -8,7 +8,7 @@ function Section3DImages({data, className}) {
 
     return (
         <div className={cn("relative w-full main-components", className)}>
-            <img className={`absolute right-0 bottom-0`} src={img} alt="3d img"/>
+            <img className={"absolute left-0 bottom-0"} src={img} alt="3d img"/>
 
             <p className={"font-medium"}>{title}</p>
 

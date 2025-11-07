@@ -43,8 +43,8 @@ export default function Login() {
         const trimPassword = password.trim();
 
         const newErrors = {
-            email: trimmedEmail ? "" : "Enter Email",
-            password: trimPassword ? "" : "Enter Password",
+            email: trimmedEmail ? "" : "ایمیل رو وارد کن",
+            password: trimPassword ? "" : "پسورد رو وارد کن",
         }
 
         if (newErrors.email || newErrors.password) {
@@ -55,7 +55,7 @@ export default function Login() {
 
         if (!emailRegex.test(trimmedEmail)) {
             setLoading(false);
-            setErrors({...newErrors, email: "Email format is wrong"});
+            setErrors({...newErrors, email: "فرمت ایمیل اشتباهه"});
             return;
         }
 
@@ -66,7 +66,7 @@ export default function Login() {
         };
         console.log(userInfo);
 
-        setAlertModalData({type: "success", message: "Login successfully."});
+        setAlertModalData({type: "success", message: "ورود موفقت آمیز."});
         setIsOpenAlertModal(true);
 
         setTimeout(() => {
@@ -105,20 +105,6 @@ export default function Login() {
         });
     }
 
-    // show and hide password button
-    const ShowPasswordButton = () => {
-        return (
-            <button
-                type="button"
-                onClick={() => setShowPassword(!showPassword)}
-                aria-label={showPassword ? "Hide Password" : "Show Password"}
-                className="absolute right-2 top-1/2 text-sm text-gray-500 hover:text-sky-500 cursor-pointer"
-            >
-                {showPassword ? "hidden" : "show"}
-            </button>
-        )
-    }
-
     return (
         <>
             {/* alert modal for state */}
@@ -126,20 +112,21 @@ export default function Login() {
 
             <section className="flex items-center justify-center min-h-screen">
                 <div className="max-w-9/10 w-full xs:max-w-sm sm:max-w-md bg-white/10 rounded-2xl shadow-lg space-y-6 p-3 xs:p-8">
-                    <h2 className="text-2xl font-bold text-center">Welcome</h2>
+                    <h2 className="text-2xl font-bold text-center">خوش اومدی</h2>
                     <p className="text-sm text-center text-secondary-txt">
-                        Login to Dashboard
+                        ورود به داشبورد
                     </p>
 
                     <form className="space-y-6" onSubmit={submitHandler}>
                         <div>
                             <Input
+                                dir={"ltr"}
                                 type={"text"}
                                 id={"email"}
                                 value={email}
                                 name={"email"}
                                 ref={inputRef}
-                                label={"email"}
+                                label={"ایمیل"}
                                 autoComplete={"email"}
                                 onChange={setEmailHandler}
                                 placeholder={"you@example.com"}
@@ -149,18 +136,27 @@ export default function Login() {
 
                         <div>
                             <Input
+                                dir={"ltr"}
                                 id="password"
-                                label={"password"}
+                                label={"رمز عبور"}
                                 value={password}
                                 name={"password"}
                                 placeholder={"******"}
                                 parentClassName={"relative"}
                                 onChange={setPasswordHandler}
-                                children={<ShowPasswordButton/>}
                                 type={showPassword ? "text" : "password"}
                                 className={cn("text-sm xs:text-base", errors.password && "border-rose-600 bg-rose-600/10")}
                                 hasError={errors.password}
-                            />
+                            >
+                                <button
+                                    type="button"
+                                    onClick={() => setShowPassword(!showPassword)}
+                                    aria-label={showPassword ? "Hide Password" : "Show Password"}
+                                    className="absolute right-2 top-1/2 text-sm text-gray-500 hover:text-sky-500 cursor-pointer"
+                                >
+                                    {showPassword ? "مخفی" : "نمایش"}
+                                </button>
+                            </Input>
                         </div>
 
                         <div className="flex items-center justify-between text-sm text-gray-400">
@@ -168,13 +164,13 @@ export default function Login() {
                                 id={"remember"}
                                 checked={remember}
                                 onChange={setRemember}
-                                label={"remember me"}
+                                label={"منو یادت باشه"}
                             />
                         </div>
 
                         <Button
                             type={"submit"}
-                            text={loading ? "loading" : "login"}
+                            text={loading ? "درحال پردازش" : "ورود"}
                             disabled={loading}
                         />
                     </form>

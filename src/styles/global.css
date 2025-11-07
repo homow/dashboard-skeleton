@@ -19,7 +19,7 @@
     --container-8xl: 85rem;
 
     /* fonts */
-    --font-Inter: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif, monospace;
+    --font-primary: 'Vazirmatn', 'IranSans', 'Tahoma', 'Arial', sans-serif;
 
     /* colors */
     --color-primary-bg: var(--color-gray-100);
@@ -62,7 +62,7 @@
         @apply bg-sky-500 border-x-1 border-stone-800 rounded-none;
     }
     body {
-        @apply font-Inter font-normal leading-[150%] text-base bg-primary-bg text-primary-txt tracking-wider;
+        @apply font-primary font-normal leading-[150%] text-base bg-primary-bg text-primary-txt tracking-wider;
     }
 
     h1, h2, h3 {

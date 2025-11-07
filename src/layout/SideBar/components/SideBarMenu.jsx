@@ -50,7 +50,7 @@ function SideBarLinks({...props}) {
             <ul className={"mt-3 space-y-1.5"}>
                 {dataLinks && dataLinks.map(link => (
                     <li key={link.text}>
-                        <NavLink onClick={() => setOpenMobileNav && setOpenMobileNav(false)} to={link.url} className={({isActive}) => cn("h-10.5 flex items-center pl-5.5 py-2 flex-row gap-3 w-full rounded-r-full hover:opacity-100", isActive && "grad-links", !isActive && "hover:bg-sky-300 hover:text-gray-900  active:bg-sky-300 active:text-gray-900")}>
+                        <NavLink onClick={() => setOpenMobileNav && setOpenMobileNav(false)} to={link.url} className={({isActive}) => cn("h-10.5 flex items-center pr-5.5 py-2 flex-row gap-3 w-full rounded-l-full hover:opacity-100", isActive && "grad-links", !isActive && "hover:bg-sky-300 hover:text-gray-900  active:bg-sky-300 active:text-gray-900")}>
 
                             {/* icon */}
                             <Icon icon={link.icon}/>
@@ -70,15 +70,15 @@ function SideBarLinks({...props}) {
 export default function SideBarMenu() {
     const dataLinks = [
         {
-            title: "Dashboard", dataLinks: [
-                {text: "Dashboard", url: "/", icon: "home"},
-                {text: "Analytics", url: "/analytics", icon: "analyze"}
+            title: "داشبورد", dataLinks: [
+                {text: "داشبورد", url: "/", icon: "home"},
+                {text: "آنالیز", url: "/analytics", icon: "analyze"}
             ]
         },
         {
-            title: "APP & PAGES", dataLinks: [
-                {text: "User", url: "/user", icon: "user"},
-                {text: "Rules & Permissions", url: "/rules", icon: "lock"},
+            title: "اپلیکیشن", dataLinks: [
+                {text: "کاربران", url: "/user", icon: "user"},
+                {text: "قوانین", url: "/rules", icon: "lock"},
             ]
         }
     ];

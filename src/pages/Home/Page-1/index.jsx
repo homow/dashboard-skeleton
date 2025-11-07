@@ -1,7 +1,7 @@
 export default function Page1() {
     return (
-        <div className="mb-10 main-components">
-            <p className="mb-6" dir={"rtl"} style={{fontFamily: "sans-serif"}}>
+        <div style={{fontFamily: "sans-serif"}} className="mb-10 main-components">
+            <p className="mb-6" dir={"rtl"}>
                 پروژه‌ای برای ساخت سریع پنل مدیریت با React و Tailwind CSS 4.
             </p>
 
@@ -16,6 +16,7 @@ export default function Page1() {
                     href="https://github.com/homow"
                 >
                     my github
+                    / گیتهاب
                 </a>
                 <a
                     className="inline-block max-w-max text-sky-500 hover:underline active:underline"
@@ -24,6 +25,7 @@ export default function Page1() {
                     href="https://github.com/homow/dashboard-skeleton"
                 >
                     get LTR source here
+                    / نسخه انگلیسی، چپ چین
                 </a>
                 <a
                     className="inline-block max-w-max text-sky-500 hover:underline active:underline"
@@ -32,6 +34,8 @@ export default function Page1() {
                     href="https://github.com/homow/dashboard-skeleton/tree/rtl"
                 >
                     get RTL source here
+                    /
+                    نسخه فارسی راست چین
                 </a>
             </div>
         </div>

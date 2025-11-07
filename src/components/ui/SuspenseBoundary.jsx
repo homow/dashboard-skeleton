@@ -3,7 +3,7 @@ import Loading from "./Loading";
 
 export default function SuspenseBoundary({children, fallback}) {
     return (
-        <Suspense fallback={fallback || <Loading message={"Loading.."}/>}>
+        <Suspense fallback={fallback || <Loading message={"درحال بارگذاری.."}/>}>
             {children}
         </Suspense>
     )

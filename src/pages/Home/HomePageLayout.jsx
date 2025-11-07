@@ -4,17 +4,17 @@ import Page1 from "./Page-1";
 import Page2 from "./Page-2";
 
 const homeRoutesData = [
-    {name: "Page-1"},
-    {name: "Page-2"},
+    {name: "تب-1"},
+    {name: "تب-2"},
 ]
 
 export default function HomePageLayout() {
-    const [activeTab, setActiveTab] = useState("Page-1");
+    const [activeTab, setActiveTab] = useState("تب-1");
 
     return (
         <>
             <section className={"main-components space-y-8"}>
-                <h1 className={"text-center"}>Home</h1>
+                <h1 className={"text-center"}>خانه</h1>
 
                 <ul
                     className={"flex flex-row items-center gap-6"}
@@ -33,8 +33,8 @@ export default function HomePageLayout() {
             </section>
 
             <section>
-                {activeTab === "Page-1" && <Page1/>}
-                {activeTab === "Page-2" && <Page2/>}
+                {activeTab === "تب-1" && <Page1/>}
+                {activeTab === "تب-2" && <Page2/>}
             </section>
         </>
     )

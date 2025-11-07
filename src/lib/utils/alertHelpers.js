@@ -20,12 +20,12 @@ export function getBtnBg(type) {
 
 export function getTitle(type) {
     const map = {
-        error: "Error",
-        success: "Success",
-        warning: "Warning",
-        info: "info"
+        error: "خطا",
+        success: "موفقیت",
+        warning: "هشدار",
+        info: "اطلاع"
     };
-    return map[type] || "Message";
+    return map[type] || "پیام";
 }
 
 export function getBgBar(type) {
