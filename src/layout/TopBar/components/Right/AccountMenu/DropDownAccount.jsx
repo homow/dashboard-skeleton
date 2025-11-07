@@ -7,7 +7,6 @@ import ConfirmModal from "@components/ui/modals/ConfirmModal";
 import AccountAvatar from "../../common/AccountAvatar";
 import Icon from "@components/ui/icons/Icon";
 import {useAuth} from "@context/AuthContext";
-import {logout} from "@api/requests/auth.js";
 import BASE_PATH from "@/config.js";
 
 function DropDownAccountOptions({data, className, setOpenMenu}) {

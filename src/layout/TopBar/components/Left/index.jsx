@@ -18,7 +18,7 @@ function OpenMobileNavMenuBtn() {
     )
 }
 
-export default function Right() {
+export default function Left() {
     return (
         <div className={"md:hidden"}>
             <OpenMobileNavMenuBtn/>
