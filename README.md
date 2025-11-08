@@ -47,9 +47,16 @@
 ## 📦 نحوه استفاده
 
 ```bash
-git clone https://github.com/homow/dashboard-skeleton.git
+# کلون گرفتن
+git clone -b rtl https://github.com/homow/dashboard-skeleton.git
+
+# Navigate
 cd dashboard-skeleton
+
+# نصب وابستگی ها
 npm install
+
+# اجرا در حالت توسعه
 npm run dev
 ```
 

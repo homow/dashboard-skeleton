@@ -48,7 +48,7 @@ Responsive sidebar for both mobile and desktop, plus built-in **Dark/Light mode*
 
 ```bash
 # Clone this repository
-git clone https://github.com/homow/dashboard-skeleton.git
+git clone -b rtl https://github.com/homow/dashboard-skeleton.git
 
 # Navigate
 cd dashboard-skeleton
