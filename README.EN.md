@@ -1,6 +1,6 @@
 ### 🌐 README Versions
-- 🇺🇸 [English Version](./README.md)
-- 🇮🇷 [نسخه فارسی](README.EN.md)
+- 🇺🇸 [English Version](./README.EN.md)
+- 🇮🇷 [نسخه فارسی](README.md)
 
 ---
 
@@ -133,8 +133,8 @@ All icons are defined in `/src/components/ui/SvgDefs.jsx`.
 > Crafted with ❤️ for developers who love clean & minimal UI.
 
 ### 🌐 README Versions
-- 🇺🇸 [English Version](./README.md)
-- 🇮🇷 [نسخه فارسی](README.EN.md)
+- 🇺🇸 [English Version](./README.EN.md)
+- 🇮🇷 [نسخه فارسی](README.md)
 
 ---
 

@@ -1,6 +1,6 @@
 ### 🌐 نسخه های README
-- 🇺🇸 [English Version](./README.md)
-- 🇮🇷 [نسخه فارسی](README.EN.md)
+- 🇺🇸 [English Version](./README.EN.md)
+- 🇮🇷 [نسخه فارسی](README.md)
 
 ---
 
@@ -133,8 +133,8 @@ src/components/
 
 
 ### 🌐 نسخه های README
-- 🇺🇸 [English Version](./README.md)
-- 🇮🇷 [نسخه فارسی](README.EN.md)
+- 🇺🇸 [English Version](./README.EN.md)
+- 🇮🇷 [نسخه فارسی](README.md)
 
 ---
 
