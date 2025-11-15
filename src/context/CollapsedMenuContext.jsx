@@ -23,11 +23,14 @@ const CollapsedMenuProvider = ({children}) => {
         return () => window.removeEventListener("resize", handleResize);
     }, [collapsed]);
 
+    // handle change and apply after mounted
     useEffect(() => {
+        applyCustomSpace({setCurrentCollapsed, collapsed});
+        setCurrentCollapsed(collapsed);
         localStorage.setItem("collapsedMenu", JSON.stringify(collapsed));
     }, [collapsed]);
 
-    const value = {collapsed, setCollapsed};
+    const value = {collapsed, setCollapsed, currentCollapsed};
 
     return (
         <CollapsedMenuContext.Provider value={value}>
