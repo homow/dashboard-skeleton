@@ -1,34 +1,43 @@
 import {lazy} from "react";
-import {useRoutes} from "react-router-dom";
+import {createBrowserRouter} from "react-router-dom";
 import SuspenseBoundary from "@components/ui/SuspenseBoundary";
 import PrivateRoutes from "./PrivateRoutes";
 import PublicRoutes from "./PublicRoutes";
+import App from "@/App"
 
-const Login = lazy(() => import("@pages/Login"))
-const MainLayout = lazy(() => import("@/layout/MainLayout"));
-const Home = lazy(() => import("@pages/Home"));
-const Analytics = lazy(() => import("@pages/Analytics"));
-const Email = lazy(() => import("@pages/Email"));
-const User = lazy(() => import("@pages/User"));
-const Rules = lazy(() => import("@pages/Rules"));
-const NotFound = lazy(() => import("@pages/NotFound"));
+const lazyWithSuspense = importFunc => {
+    const Component = lazy(importFunc);
+
+    return props => (
+        <SuspenseBoundary>
+            <Component {...props}/>
+        </SuspenseBoundary>
+    );
+};
+
+const Login = lazyWithSuspense(() => import("@pages/Login"))
+const Home = lazyWithSuspense(() => import("@pages/Home"));
+const Analytics = lazyWithSuspense(() => import("@pages/Analytics"));
+const Email = lazyWithSuspense(() => import("@pages/Email"));
+const User = lazyWithSuspense(() => import("@pages/User"));
+const Rules = lazyWithSuspense(() => import("@pages/Rules"));
+const NotFound = lazyWithSuspense(() => import("@pages/NotFound"));
 
 // routes
-const routes = [
-    // when admin not login
-    {
-        path: "/login",
-        element: <PublicRoutes/>,
+const router = createBrowserRouter(
+    [{
+        element: <App/>,
         children: [
-            {index: true, element: <Login/>}
-        ]
-    },
-    // when admin login
-    {
-        element: <PrivateRoutes/>,
-        children: [
+            // when admin not login
             {
-                element: <MainLayout/>,
+                element: <PublicRoutes/>,
+                children: [
+                    {path: "/login", element: <Login/>}
+                ]
+            },
+            // when admin login
+            {
+                element: <PrivateRoutes/>,
                 children: [
                     {path: "/", element: <Home/>},
                     {path: "/analytics", element: <Analytics/>},
@@ -40,13 +49,7 @@ const routes = [
                 ]
             }
         ]
-    },
-];
+    }]
+);
 
-export default function AppRoutes() {
-    return (
-        <SuspenseBoundary>
-            {useRoutes(routes)}
-        </SuspenseBoundary>
-    )
-}
+export default router;

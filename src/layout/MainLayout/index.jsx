@@ -1,4 +1,3 @@
-import {Outlet} from "react-router-dom";
 import TopBar from "../TopBar";
 import SideBar from "../SideBar";
 import Footer from "../Footer";
@@ -6,7 +5,7 @@ import SvgDefs from "@ui/icons/SvgDefs";
 import Overlay from "@components/ui/Overlay";
 import {MobileNavProvider, useMobileNav} from "@context/MobileNavContext";
 
-function InnerMainLayout() {
+function InnerMainLayout({children}) {
     const {openMobileNav, setOpenMobileNav} = useMobileNav();
 
     return (
@@ -21,7 +20,7 @@ function InnerMainLayout() {
             {/* side bar menu and links */}
             <SideBar/>
 
-            <section className={"transition-all mr-custom flex-1 px-3 sm:px-6 flex flex-col"}>
+            <section className={"transition-all ml-custom flex-1 px-3 sm:px-6 flex flex-col"}>
 
                 {/* top bar | header */}
                 <TopBar/>
@@ -30,7 +29,7 @@ function InnerMainLayout() {
                 <main id="main" className={"@container/main relative h-full pb-5 space-y-6"}>
 
                     {/* Routes */}
-                    <Outlet/>
+                    {children}
                 </main>
 
                 {/* footer */}
@@ -40,10 +39,12 @@ function InnerMainLayout() {
     )
 }
 
-export default function MainLayout() {
+export default function MainLayout({children}) {
     return (
         <MobileNavProvider>
-            <InnerMainLayout/>
+            <InnerMainLayout>
+                {children}
+            </InnerMainLayout>
         </MobileNavProvider>
     )
 };
