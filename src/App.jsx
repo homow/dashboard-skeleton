@@ -1,6 +1,7 @@
+import {Outlet} from "react-router-dom";
 import {AuthProvider, useAuth} from "@context/AuthContext"
 import Loading from "@components/ui/Loading";
-import AppRoutes from "@/routes/AppRoutes";
+import MainLayout from "@/layout/MainLayout";
 
 function InnerApp() {
     const {loading} = useAuth()
@@ -9,7 +10,9 @@ function InnerApp() {
         loading ? (
             <Loading/>
         ) : (
-            <AppRoutes/>
+            <MainLayout>
+                <Outlet/>
+            </MainLayout>
         )
     )
 }
