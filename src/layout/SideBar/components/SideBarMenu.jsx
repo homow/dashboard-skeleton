@@ -1,4 +1,3 @@
-import {useEffect, useState} from "react";
 import {NavLink} from "react-router-dom";
 import {useMobileNav} from "@context/MobileNavContext";
 import {useCollapsedMenu} from "@context/CollapsedMenuContext";
@@ -8,39 +7,18 @@ import {cn} from "@utils/ui-utils.js";
 function SideBarLinks({...props}) {
     const {title, dataLinks} = props.data;
     const {setOpenMobileNav} = useMobileNav();
-    const {collapsed} = useCollapsedMenu();
-    const [collapsedState, setCollapsedState] = useState(false);
-
-    // applySize
-    useEffect(() => {
-        // applySize handler
-        const applySize = collapse => {
-            if (window.innerWidth < 896) {
-                setCollapsedState(false);
-            } else {
-                setCollapsedState(collapse);
-            }
-        };
-        applySize(collapsed); // run when component mounted
-
-        window.addEventListener("resize", applySize.bind(null, collapsed));
-
-        // cleanUp event
-        return () => {
-            window.removeEventListener("resize", applySize.bind(null, collapsed));
-        }
-    }, [collapsed]);
+    const {currentCollapsed} = useCollapsedMenu();
 
     return (
         <div>
             {/* title links */}
-            <div className={cn("h-4.5 flex items-center gap-4", collapsedState && "px-2")}>
+            <div className={cn("h-4.5 flex items-center gap-4", currentCollapsed && "px-2")}>
 
                 {/* border */}
-                <div className={cn("w-10 h-px bg-disable-txt", collapsedState && "hidden")}></div>
+                <div className={cn("w-10 h-px bg-disable-txt", currentCollapsed && "hidden")}></div>
 
                 {/* title */}
-                <p className={cn("text-sm text-disable-txt", collapsedState && "hidden")}>{title}</p>
+                <p className={cn("text-sm text-disable-txt", currentCollapsed && "hidden")}>{title}</p>
 
                 {/* border */}
                 <div className="flex-1 h-px bg-disable-txt"></div>
@@ -56,7 +34,7 @@ function SideBarLinks({...props}) {
                             <Icon icon={link.icon}/>
 
                             {/* text of link */}
-                            <span className={cn(collapsedState && "hidden")}>
+                            <span className={cn(currentCollapsed && "hidden")}>
                                 {link.text}
                             </span>
                         </NavLink>
