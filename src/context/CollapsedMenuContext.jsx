@@ -30,7 +30,7 @@ const CollapsedMenuProvider = ({children}) => {
         localStorage.setItem("collapsedMenu", JSON.stringify(collapsed));
     }, [collapsed]);
 
-    const value = {collapsed, setCollapsed};
+    const value = {collapsed, setCollapsed, currentCollapsed};
 
     return (
         <CollapsedMenuContext.Provider value={value}>
