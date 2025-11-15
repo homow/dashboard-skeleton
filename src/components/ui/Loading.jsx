@@ -1,7 +1,7 @@
 export default function Loading({ message = "Loading..." }) {
     return (
         <div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-main-bg/60 dark:bg-main-bg/90 backdrop-blur-xs"
+            className="h-full flex items-center justify-center bg-main-bg/60 dark:bg-main-bg/90 backdrop-blur-xs"
             role="status"
             aria-live="polite"
         >
@@ -16,4 +16,4 @@ export default function Loading({ message = "Loading..." }) {
             </div>
         </div>
     );
-}
+};
