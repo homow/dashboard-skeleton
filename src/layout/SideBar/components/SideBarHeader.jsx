@@ -1,50 +1,14 @@
-import {useEffect, useCallback, useState} from "react";
 import {Link} from "react-router-dom";
 import Icon from "@components/ui/icons/Icon";
 import {useCollapsedMenu} from "@context/CollapsedMenuContext";
 import {cn} from "@utils/ui-utils.js";
 
 export default function SideBarHeader() {
-    const [titleStyle, setTitleStyle] = useState("");
-    const {collapsed, setCollapsed} = useCollapsedMenu();
+    const {collapsed, setCollapsed, currentCollapsed} = useCollapsedMenu();
 
-    // apply collapsed state from size
-    const applySpacing = useCallback(collapsedState => {
-        if (window.innerWidth < 896) {
-            document.documentElement.style.setProperty("--spacing-custom", "0px");
-            setTitleStyle("")
-        } else {
-            document.documentElement.style.setProperty(
-                "--spacing-custom",
-                collapsedState ? "80px" : "260px"
-            );
-            setTitleStyle(collapsed ? "hidden" : "");
-        }
-    }, [collapsed]);
-
-    // run in component mounted
-    useEffect(() => {
-        applySpacing(collapsed);
-    }, [applySpacing, collapsed]);
-
-    // apply space in resize
-    useEffect(() => {
-        const handleResize = () => applySpacing(collapsed);
-
-        window.addEventListener("resize", handleResize);
-
-        // cleanUp event
-        return () => window.removeEventListener("resize", handleResize);
-    }, [collapsed, applySpacing]);
 
     // toggle collapse when click to button
-    const toggleCollapse = () => {
-        setTitleStyle(collapsed ? "hidden" : "");
-        const newState = !collapsed;
-        setCollapsed(newState);
-        localStorage.setItem("collapsedMenu", JSON.stringify(newState));
-        applySpacing(newState);
-    };
+    const toggleCollapse = () => setCollapsed(!collapsed);
 
     return (
         <div className={"relative flex items-center justify-between h-16"}>
@@ -56,7 +20,7 @@ export default function SideBarHeader() {
                         <use href="#logo-icon"></use>
                     </svg>
                 </span>
-                <span className={cn("font-medium", titleStyle)}>Material</span>
+                <span className={cn("font-medium", currentCollapsed && "hidden")}>Material</span>
             </Link>
 
             <span
