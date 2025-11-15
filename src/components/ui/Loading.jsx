@@ -1,7 +1,9 @@
-export default function Loading({ message = "صبر کنید..." }) {
+import {cn} from "@utils/ui-utils.js";
+
+export default function Loading({className, message = "صبر کنید..."}) {
     return (
         <div
-            className="w-full h-full flex items-center justify-center bg-main-bg/60 dark:bg-main-bg/90 backdrop-blur-xs"
+            className={cn("w-full h-full flex items-center justify-center bg-main-bg/60 dark:bg-main-bg/90 backdrop-blur-xs", className)}
             role="status"
             aria-live="polite"
         >

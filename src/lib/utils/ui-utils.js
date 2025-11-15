@@ -5,9 +5,11 @@ const cn = (...inputs) => twMerge(clsx(inputs));
 
 const applyCustomSpace = ({setCurrentCollapsed, collapsed}) => {
     if (window.innerWidth < 896) {
+        console.log("ok")
         document.documentElement.style.setProperty("--spacing-custom", "0px");
         setCurrentCollapsed(false);
     } else {
+        console.log("not ok");
         document.documentElement.style.setProperty(
             "--spacing-custom",
             collapsed ? "80px" : "256px"

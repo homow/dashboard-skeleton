@@ -4,6 +4,7 @@ import SuspenseBoundary from "@components/ui/SuspenseBoundary";
 import PrivateRoutes from "./PrivateRoutes";
 import PublicRoutes from "./PublicRoutes";
 import App from "@/App"
+import MainLayout from "@/layout/MainLayout/index.jsx";
 
 const lazyWithSuspense = importFunc => {
     const Component = lazy(importFunc);
@@ -15,7 +16,7 @@ const lazyWithSuspense = importFunc => {
     );
 };
 
-const Login = lazyWithSuspense(() => import("@pages/Login"))
+const Login = lazy(() => import("@pages/Login"));
 const Home = lazyWithSuspense(() => import("@pages/Home"));
 const Analytics = lazyWithSuspense(() => import("@pages/Analytics"));
 const Email = lazyWithSuspense(() => import("@pages/Email"));
@@ -28,25 +29,26 @@ const router = createBrowserRouter(
     [{
         element: <App/>,
         children: [
-            // when admin not login
             {
                 element: <PublicRoutes/>,
                 children: [
                     {path: "/login", element: <Login/>}
                 ]
             },
-            // when admin login
             {
                 element: <PrivateRoutes/>,
-                children: [
-                    {path: "/", element: <Home/>},
-                    {path: "/analytics", element: <Analytics/>},
-                    {path: "/email", element: <Email/>},
-                    {path: "/user", element: <User/>},
-                    {path: "/rules", element: <Rules/>},
-                    // 404 | not found
-                    {path: "*", element: <NotFound/>}
-                ]
+                children: [{
+                    element: <MainLayout/>,
+                    children: [
+                        {path: "/", element: <Home/>},
+                        {path: "/analytics", element: <Analytics/>},
+                        {path: "/email", element: <Email/>},
+                        {path: "/user", element: <User/>},
+                        {path: "/rules", element: <Rules/>},
+                        // 404 | not found
+                        {path: "*", element: <NotFound/>}
+                    ]
+                }]
             }
         ]
     }]
