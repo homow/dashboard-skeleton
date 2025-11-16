@@ -1,4 +1,5 @@
 import {useMobileNav} from "@context/MobileNavContext";
+import Icon from "@ui/icons/Icon";
 
 function OpenMobileNavMenuBtn() {
     const {setOpenMobileNav} = useMobileNav();
@@ -11,9 +12,7 @@ function OpenMobileNavMenuBtn() {
                 }}
             className={"cursor-pointer md:hidden"}
         >
-            <svg className={"size-6"}>
-                <use href="#bars-icon"></use>
-            </svg>
+            <Icon icon={"bars"} className={"size-6"}/>
         </span>
     )
 }
