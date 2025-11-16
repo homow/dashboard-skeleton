@@ -1,20 +1,9 @@
 import {lazy} from "react";
 import {createBrowserRouter} from "react-router-dom";
-import SuspenseBoundary from "@components/ui/SuspenseBoundary";
 import MainLayout from "@/layout/MainLayout";
 import PrivateRoutes from "./PrivateRoutes";
 import PublicRoutes from "./PublicRoutes";
 import App from "@/App"
-
-const lazyWithSuspense = (importFunc, className) => {
-    const Component = lazy(importFunc);
-
-    return props => (
-        <SuspenseBoundary className={className}>
-            <Component {...props}/>
-        </SuspenseBoundary>
-    );
-};
 
 const Login = lazyWithSuspense(() => import("@pages/Login"), "fixed inset-0");
 const Home = lazyWithSuspense(() => import("@pages/Home"));
