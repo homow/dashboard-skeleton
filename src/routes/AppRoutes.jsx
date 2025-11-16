@@ -6,17 +6,17 @@ import PublicRoutes from "./PublicRoutes";
 import App from "@/App"
 import MainLayout from "@/layout/MainLayout/index.jsx";
 
-const lazyWithSuspense = importFunc => {
+const lazyWithSuspense = (importFunc, className) => {
     const Component = lazy(importFunc);
 
     return props => (
-        <SuspenseBoundary>
+        <SuspenseBoundary className={className}>
             <Component {...props}/>
         </SuspenseBoundary>
     );
 };
 
-const Login = lazy(() => import("@pages/Login"));
+const Login = lazyWithSuspense(() => import("@pages/Login"), "fixed inset-0");
 const Home = lazyWithSuspense(() => import("@pages/Home"));
 const Analytics = lazyWithSuspense(() => import("@pages/Analytics"));
 const Email = lazyWithSuspense(() => import("@pages/Email"));
