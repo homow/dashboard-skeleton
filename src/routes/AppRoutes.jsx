@@ -6,11 +6,11 @@ import PrivateRoutes from "./PrivateRoutes";
 import PublicRoutes from "./PublicRoutes";
 import App from "@/App"
 
-const lazyWithSuspense = importFunc => {
+const lazyWithSuspense = (importFunc, className) => {
     const Component = lazy(importFunc);
 
     return props => (
-        <SuspenseBoundary>
+        <SuspenseBoundary className={className}>
             <Component {...props}/>
         </SuspenseBoundary>
     );
