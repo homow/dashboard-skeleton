@@ -1,7 +1,7 @@
+import Icon from "@ui/icons/Icon";
+import {cn} from "@utils/ui-utils.js";
 import img1 from "@img/home/3d-image-1.webp"
 import img2 from "@img/home/3d-image-2.webp"
-import {cn} from "@utils/ui-utils.js";
-import Icon from "@ui/icons/Icon.jsx";
 
 // section 3D image profit
 function Section3DImages({data, className}) {
