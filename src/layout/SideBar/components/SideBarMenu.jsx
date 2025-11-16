@@ -45,22 +45,22 @@ function SideBarLinks({...props}) {
     )
 }
 
-export default function SideBarMenu() {
-    const dataLinks = [
-        {
-            title: "Dashboard", dataLinks: [
-                {text: "Dashboard", url: "/", icon: "home"},
-                {text: "Analytics", url: "/analytics", icon: "analyze"}
-            ]
-        },
-        {
-            title: "APP & PAGES", dataLinks: [
-                {text: "User", url: "/user", icon: "user"},
-                {text: "Rules & Permissions", url: "/rules", icon: "lock"},
-            ]
-        }
-    ];
+const dataLinks = [
+    {
+        title: "Dashboard", dataLinks: [
+            {text: "Dashboard", url: "/", icon: "home"},
+            {text: "Analytics", url: "/analytics", icon: "analyze"}
+        ]
+    },
+    {
+        title: "APP & PAGES", dataLinks: [
+            {text: "User", url: "/user", icon: "user"},
+            {text: "Rules & Permissions", url: "/rules", icon: "lock"},
+        ]
+    }
+];
 
+export default function SideBarMenu() {
     return (
         <div className={"space-y-5 pb-2"}>
             {dataLinks.length > 0 && dataLinks.map(link => (
