@@ -16,7 +16,11 @@ function InnerMainLayout() {
             <SvgDefs/>
 
             {/* overlay */}
-            <Overlay flag={openMobileNav} setFlag={setOpenMobileNav} z={"z-30"}/>
+            <Overlay
+                flag={openMobileNav}
+                setFlag={setOpenMobileNav}
+                z={"z-30"}
+            />
 
             {/* side bar menu and links */}
             <SideBar/>
