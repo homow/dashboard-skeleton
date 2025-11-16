@@ -152,7 +152,7 @@ export default function Login() {
                                 parentClassName={"relative"}
                                 onChange={setPasswordHandler}
                                 type={showPassword ? "text" : "password"}
-                                className={cn("text-sm xs:text-base", errors.password && "border-rose-600 bg-rose-600/10")}
+                                className={cn("text-sm xs:text-base")}
                                 hasError={errors.password}
                             >
                                 <button
