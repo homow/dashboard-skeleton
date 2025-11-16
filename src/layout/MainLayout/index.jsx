@@ -10,7 +10,7 @@ function InnerMainLayout() {
     const {openMobileNav, setOpenMobileNav} = useMobileNav();
 
     return (
-        <section id="app-container" className="flex flex-row min-h-screen">
+        <section id="app-container" className="flex flex-row min-h-svh">
 
             {/* svg icons */}
             <SvgDefs/>
