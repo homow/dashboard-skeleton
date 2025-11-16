@@ -16,7 +16,7 @@ const lazyWithSuspense = importFunc => {
     );
 };
 
-const Login = lazy(() => import("@pages/Login"));
+const Login = lazyWithSuspense(() => import("@pages/Login"), "fixed inset-0");
 const Home = lazyWithSuspense(() => import("@pages/Home"));
 const Analytics = lazyWithSuspense(() => import("@pages/Analytics"));
 const Email = lazyWithSuspense(() => import("@pages/Email"));
