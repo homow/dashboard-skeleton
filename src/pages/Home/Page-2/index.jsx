@@ -1,6 +1,7 @@
 import img1 from "@img/home/3d-image-1.webp"
 import img2 from "@img/home/3d-image-2.webp"
 import {cn} from "@utils/ui-utils.js";
+import Icon from "@ui/icons/Icon.jsx";
 
 // section 3D image profit
 function Section3DImages({data, className}) {
@@ -26,11 +27,12 @@ function TransActionsIconBox({data, className}) {
     const {text, icon, color, profit} = data
 
     return (
-        <div className={`flex flex-row items-center gap-3 ${className}`}>
-            <span className={cn("rounded-md p-2 text-white shadow-md`", color)}>
-                <svg className={"text-white size-4"}>
-                    <use href={`#${icon}-icon`}></use>
-                </svg>
+        <div className={cn("flex flex-row items-center gap-3", className)}>
+            <span className={cn("rounded-md p-2 text-white shadow-md", color)}>
+                <Icon
+                    icon={icon}
+                    className={"text-white size-4"}
+                />
             </span>
 
             <div>
@@ -49,11 +51,7 @@ function TransActions({className}) {
             <div className={"flex flex-row items-center justify-between mb-7"}>
                 <p className={"text-lg md:text-xl font-medium"}>Transactions</p>
 
-                <span>
-                    <svg className={"size-4"}>
-                        <use href="#more-icon"></use>
-                    </svg>
-                </span>
+                <Icon icon={"more"} className={"size-4"}/>
             </div>
 
             <div className={"flex flex-row items-center pb-3.5 gap-10 @xl:gap-20 @2xl:gap-30"}>
