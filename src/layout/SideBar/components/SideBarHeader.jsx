@@ -15,11 +15,7 @@ export default function SideBarHeader() {
 
             {/* brand and logo */}
             <Link to="/" className={"pl-5.5 flex flex-row items-center gap-4 hover:text-primary-txt"}>
-               <span>
-                    <svg className={"w-7.5 h-[23px]"}>
-                        <use href="#logo-icon"></use>
-                    </svg>
-                </span>
+                <Icon icon={"logo"} className={"w-7.5 h-[23px]"}/>
                 <span className={cn("font-medium", currentCollapsed && "hidden")}>Material</span>
             </Link>
 
