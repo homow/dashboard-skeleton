@@ -1,17 +1,17 @@
-import {lazy} from "react";
 import {createBrowserRouter} from "react-router-dom";
+import LazyWithSuspense from "@ui/suspense/LazyWithSuspense";
 import MainLayout from "@/layout/MainLayout";
 import PrivateRoutes from "./PrivateRoutes";
 import PublicRoutes from "./PublicRoutes";
 import App from "@/App"
 
-const Login = lazyWithSuspense(() => import("@pages/Login"), "fixed inset-0");
-const Home = lazyWithSuspense(() => import("@pages/Home"));
-const Analytics = lazyWithSuspense(() => import("@pages/Analytics"));
-const Email = lazyWithSuspense(() => import("@pages/Email"));
-const User = lazyWithSuspense(() => import("@pages/User"));
-const Rules = lazyWithSuspense(() => import("@pages/Rules"));
-const NotFound = lazyWithSuspense(() => import("@pages/NotFound"));
+const Login = LazyWithSuspense(() => import("@pages/Login"), "fixed inset-0");
+const Home = LazyWithSuspense(() => import("@pages/Home"));
+const Analytics = LazyWithSuspense(() => import("@pages/Analytics"));
+const Email = LazyWithSuspense(() => import("@pages/Email"));
+const User = LazyWithSuspense(() => import("@pages/User"));
+const Rules = LazyWithSuspense(() => import("@pages/Rules"));
+const NotFound = LazyWithSuspense(() => import("@pages/NotFound"));
 
 // routes
 const router = createBrowserRouter(
