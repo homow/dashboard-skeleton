@@ -12,4 +12,4 @@ export default function TopBar() {
             <RightTopBar/>
         </header>
     )
-}
+};
