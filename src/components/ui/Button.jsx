@@ -15,4 +15,4 @@ export default function Button({text = "Click", onClick, type = "button", classN
             {text}
         </button>
     );
-}
+};
